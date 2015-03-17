@@ -1,0 +1,15 @@
+p {
+  background-color: orange;
+  width: 960;
+  margin: 0 auto; }
+
+div {
+  background-color: blue;
+  border: 5px solid purple; }
+
+header {
+  height: 100px; }
+
+img {
+  height: 500px;
+  width: 400px; }

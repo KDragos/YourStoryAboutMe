@@ -1,0 +1,94 @@
+header, .hero, main, footer, body {
+	width: 960px;
+	margin: 0 auto;
+}
+
+
+/* Header Section */
+
+header {
+	background-color: green;
+	min-height: 75px;
+	overflow: hidden;
+	position: relative;
+	text-align: center;
+}
+
+nav {
+	background-color: red;
+	position: absolute;
+	bottom: 25px;
+	right: 0;
+	left: 0;
+}
+
+header img {
+	float:left;
+	height: 100px;
+	width: 100px;
+}
+header button {
+	float:right;
+}
+
+
+/* Hero Section */
+
+.hero {
+	min-height: 200px;
+	position: relative;
+	background: 
+		-webkit-radial-gradient(rgba(181, 189, 200, 0.25) 0%,
+								 rgba(130,140,149,0.50) 50%,
+								 rgba(40,52,59,0.9) 100%),
+		url('images/forrest.png') no-repeat fixed 80% 10%; 
+}
+
+.hero div {
+	width: 60%;
+	position: absolute;
+	top: 50px;
+	margin-left: 25px;
+}
+
+
+div {
+	background-color: blue;
+}
+
+
+/* Main Content Section*/
+
+main {
+	background-color:yellow;
+	width: 875px;
+}
+
+.snippet {
+	border: 3px solid red;
+	overflow: hidden;
+}
+
+.snippet img {
+	float: left;
+	height: 75px;
+	width: 75px;
+}
+
+/* Footer */
+
+footer {
+	background-color: orange;
+	padding: 2px;
+}
+
+
+footer div {
+	width: calc(32%);
+	display: inline-block;
+	vertical-align: top;
+	@media screen and (max-width: 400px) {
+		box-sizing: border-box;
+		float: left;
+	}
+}
