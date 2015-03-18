@@ -48,7 +48,7 @@ header button {
 								 rgba(130,140,149,0.40) 20%,
 								 rgba(130,140,149,0.60) 40%,
 								 rgba(40,52,59,0.8) 100%),
-		url('images/forrest.png') no-repeat fixed 80% 10%; 
+		url('images/forrest.png') no-repeat 80% 10%; 
 }
 
 .hero div {
@@ -69,38 +69,62 @@ div {
 main {
 	background-color:yellow;
 	width: 875px;
-	clear:both;
-	text-align: center;
+	border: 5px solid magenta;
 }
 
 
-.snippets:after {
-   content: " "; /* Older browser do not support empty content */
-   visibility: hidden;
+main:after {
+   content: ""; /* Older browser do not support empty content */
+   /*visibility: hidden;*/
    display: block;
-   height: 0;
-   /*clear: both;*/
+   /*height: 0;*/
+   clear: both;
+}
+
+.story-nav {
+	text-align: center;
+	border-radius: 10px;
+	border: 3px solid pink;
+}
+
+.story-nav a {
+	margin: 0 10px;
+}
+
+
+.container.js-masonry {
+	text-align: center;
+	box-sizing: border-box;
 }
 
 .snippet {
+	vertical-align: top;
+	margin: 7px;
 	border: 3px solid red;
-	overflow: hidden;
-	float: left;
+	text-align: left;
+	display: inline-block;
 	width: calc(33.33% - 20px);
 }
 
-.snippet img {
+main img {
 	float: left;
 	height: 75px;
 	width: 75px;
 }
 
+.story:after {
+	clear:both;
+	display:block;
+	content:"";
+
+}
 
 /* Footer */
 
 footer {
 	background-color: orange;
 	padding: 2px;
+	display:block;
 }
 
 
