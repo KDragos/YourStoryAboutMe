@@ -1,19 +1,22 @@
-p {
-	background-color: orange;
-	width: 960;
-	margin: 0 auto;
-}
+/***********
+Utilities - Variables and Mixins
+**********/
 
-div {
-	background-color: blue;
-	border: 5px solid purple;
-}
 
-header {
-	height: 100px;
-}
+/***********
+Base - Normalize and Defaults
+**********/
+@import "base/normalize";
 
-img {
-	height: 500px;
-	width: 400px;
-}
+/***********
+Layout -Anything related to layout
+**********/
+
+@import "layout/primary-header";
+@import "layout/primary-footer";
+@import "layout/hero";
+
+/***********
+Components - sections of site. 
+**********/
+

@@ -19,3 +19,11 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+Route::get('layout', function(){
+	return view('layout');
+});
+
+Route::get('profile', function (){
+	return view('profile');
+});
