@@ -92,9 +92,8 @@ main:after {
 }
 
 
-.container.js-masonry {
+.story-container.js-masonry {
 	text-align: center;
-	box-sizing: border-box;
 }
 
 .snippet {
@@ -106,18 +105,18 @@ main:after {
 	width: calc(33.33% - 20px);
 }
 
-main img {
+.snippet img {
 	float: left;
 	height: 75px;
 	width: 75px;
 }
 
-.story:after {
+/*.story:after {
 	clear:both;
 	display:block;
 	content:"";
 
-}
+}*/
 
 /* Footer */
 

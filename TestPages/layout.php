@@ -65,10 +65,6 @@
 					<p>Date created</p>
 				</div>
 
-				<!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio temporibus incidunt quaerat eligendi accusamus voluptate, eos dolores laborum dolorum eaque qui, aliquid ex at deserunt ut ea nihil quis ratione.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio temporibus incidunt quaerat eligendi accusamus voluptate, eos dolores laborum dolorum eaque qui, aliquid ex at deserunt ut ea nihil quis ratione.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio temporibus incidunt quaerat eligendi accusamus voluptate, eos dolores laborum dolorum eaque qui, aliquid ex at deserunt ut ea nihil quis ratione.</p>
-				 -->
 			</div>
 
 		</main>
