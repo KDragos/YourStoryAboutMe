@@ -7,6 +7,7 @@ Utilities - Variables and Mixins
 Base - Normalize and Defaults
 **********/
 @import "base/normalize";
+@import "base/defaults";
 
 /***********
 Layout -Anything related to layout
@@ -19,4 +20,6 @@ Layout -Anything related to layout
 /***********
 Components - sections of site. 
 **********/
+@import "components/misc";
+@import "components/story-snippets";
 

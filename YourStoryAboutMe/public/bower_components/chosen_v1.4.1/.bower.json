@@ -1,0 +1,15 @@
+{
+  "name": "chosen_v1.4.1",
+  "_cacheHeaders": {
+    "ETag": "\"dcdb39005f598e9d8452359429671d84\"",
+    "Last-Modified": "Wed, 11 Mar 2015 04:03:04 GMT",
+    "Content-Length": "378102",
+    "Content-Type": "application/octet-stream",
+    "Content-Disposition": "attachment; filename=chosen_v1.4.1.zip"
+  },
+  "_release": "e-tag:dcdb39005",
+  "_source": "https://github.com/harvesthq/chosen/releases/download/v1.4.1/chosen_v1.4.1.zip",
+  "_target": "*",
+  "_originalSource": "https://github.com/harvesthq/chosen/releases/download/v1.4.1/chosen_v1.4.1.zip",
+  "_direct": true
+}

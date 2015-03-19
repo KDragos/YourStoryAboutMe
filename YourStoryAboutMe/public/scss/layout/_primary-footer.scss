@@ -1,24 +1,24 @@
 footer {
 	background-color: orange;
-	padding: 2px;
 	display:block;
+	padding: 2px;
 	div {
-		box-sizing: border-box;
-		width: 100%;
-		display: block;
 		border: 2px solid grey;
-	&:nth-child(3) {
-		display: none;
-	}
+		box-sizing: border-box;
+		display: block;
+		width: 100%;
+		&:nth-child(3) {
+			display: none;
+		}
 	}
 	@media screen and (min-width: 750px) {
 		div {
-			width: calc(32%);
 			display: inline-block;
 			vertical-align: top;
-		&:nth-child(3) {
-			display:inline-block;
-		}
+			width: calc(32%);
+			&:nth-child(3) {
+				display:inline-block;
+			}
 		}
 	}
 }

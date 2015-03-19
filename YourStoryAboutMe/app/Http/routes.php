@@ -27,3 +27,11 @@ Route::get('layout', function(){
 Route::get('profile', function (){
 	return view('profile');
 });
+
+
+Route::get('story', function (){
+	return view('story');
+});
+Route::get('story/new', function (){
+	return view('storyNew');
+});

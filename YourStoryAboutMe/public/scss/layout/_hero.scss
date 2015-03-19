@@ -1,31 +1,34 @@
 .hero {
-	min-height:100px;
 	background-color:yellow;
+	min-height:100px;
 	
 	&:after {
+		clear:both;
 		content:"";
 		display:block;
-		clear:both;
 	}
 	h1 {
 		margin-top: 0;
 	}
+	h4 {
+		margin: 0 auto;
+	}
 
 	@media screen and (min-width: 750px) {
-	min-height: 200px;
-	position: relative;
 	background: 
 		-webkit-radial-gradient(rgba(181, 189, 200, 0.20) 0%,
 								 rgba(130,140,149,0.40) 20%,
 								 rgba(130,140,149,0.60) 40%,
 								 rgba(40,52,59,0.8) 100%),
 		url("/images/forrest.png") no-repeat 80% 10%; 
+	min-height: 200px;
+	position: relative;
 		div {
-			width: 60%;
-			position: absolute;
 			background-color:blue;
-			top: 50px;
 			margin-left: 25px;
+			position: absolute;
+			top: 50px;
+			width: 60%;
 		}
 	
 	}

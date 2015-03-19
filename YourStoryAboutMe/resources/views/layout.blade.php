@@ -3,18 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Your Story About Me</title>
-
-
-	{{-- <link rel="stylesheet" href="{{ url('../bower_components/normalize.css/normalize.css') }}"> --}}
-
-	{{-- <link rel="stylesheet" href="{{ URL::asset('./bower_components/normalize.css/normalize.css') }}"> --}}
-	{{-- {{ HTML::script('bower_components/normalize.css/normalize.css') }} --}}
 	<link rel="stylesheet" href="<?php echo asset('css/app.css')?>">
 	<link rel="stylesheet" href="<?php echo asset('css/styles.css')?>">
-	{{-- {{ HTML::style('css/styles.css') }} --}}
 
-	<script src="<?php echo asset('/js/main.js') ?>"></script>
-	<script src="/node_modules/masonry-layout/dist/masonry.pkgd.min.js"></script>
 
 </head>
 <body>
@@ -37,8 +28,8 @@
 	@section('hero')
 		<section class="hero">
 			<div>
-				<h1>User name will go here.</h1>
-				<h4>“In creative nonfiction, we are writing “truth” and making a kind of pact with the reader. We want the reader to trust our words. And yet in telling the same story, several people might each remember a different “truth”.”</h4>
+				<h1>Welcome, User! </h1>
+				<h4>“In creative nonfiction, we are writing “truth” ... and yet in telling the same story, several people might each remember a different “truth”.”</h4>
 			</div>
 		</section>
 	@show
@@ -70,5 +61,7 @@
 	@show
 
 
+	<script src="<?php echo asset('/js/main.js') ?>"></script>
+	<script src="/node_modules/masonry-layout/dist/masonry.pkgd.min.js"></script>
 </body>
 </html>
