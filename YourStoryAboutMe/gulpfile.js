@@ -27,10 +27,12 @@ gulp.task('scripts', function() {
   return gulp.src([
   './bower_components/jquery/dist/jquery.js',
   './bower_components/handlebars/handlebars.js',
+  './bower_components/chosen_v1.4.1/chosen.jquery.js',
+  './node_modules/masonry-layout/dist/masonry.pkgd.js',
   './public/js/*.js'
   ])  // Edit the place where we've put our js files. 
     .pipe(concat('build.js')) // This is going to be the file name.
-    .pipe(uglify())
+    // .pipe(uglify())
     .pipe(gulp.dest('./public/js/')); // Just a folder name. 
 });
 

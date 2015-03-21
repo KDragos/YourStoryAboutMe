@@ -334,7 +334,9 @@ a {
 
 main {
   background-color: yellow;
-  width: 100%; }
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%; }
   main:after {
     clear: both;
     content: "";
@@ -349,6 +351,81 @@ main {
 /***********
 Layout -Anything related to layout
 **********/
+.welcome-hero {
+  margin: 0;
+  background: url('/images/fieldwtree.png') no-repeat;
+  background-size: 100%, 100%;
+  width: 100%;
+  height: 100%; }
+  .welcome-hero p {
+    background-color: yellow;
+    width: 90%;
+    margin: 0 auto; }
+  @media screen and (min-width: 600px) {
+    .welcome-hero {
+      background-image: none; } }
+
+.choose-login, .choose-sign-up {
+  display: none; }
+
+.login, .sign-up {
+  background-color: purple;
+  text-align: center;
+  padding: 2px; }
+  .login h1, .sign-up h1 {
+    display: inline-block; }
+  .login form, .sign-up form {
+    display: none; }
+    .login form button, .sign-up form button {
+      display: block; }
+    .login form input, .sign-up form input {
+      width: 70%; }
+  .login .show, .sign-up .show {
+    background-color: blue;
+    display: block; }
+
+@media screen and (min-width: 700px) {
+  .welcome-hero {
+    background-image: url('/images/fieldwtree.png');
+    background-size: cover;
+    min-height: 600px; }
+    .welcome-hero div {
+      background-color: #ddd;
+      text-align: center;
+      padding: 10px; }
+    .welcome-hero p {
+      width: 70%;
+      margin: 0 0 0 auto; }
+  .choose-login, .choose-sign-up {
+    display: inline-block;
+    padding: 10px;
+    background-color: purple;
+    border: 2px solid yellow;
+    border-radius: 15px; }
+  .login {
+    float: left;
+    -webkit-transform: translateX(-9999px);
+    -ms-transform: translateX(-9999px);
+    transform: translateX(-9999px); }
+  .sign-up {
+    float: right;
+    -webkit-transform: translateX(9999px);
+    -ms-transform: translateX(9999px);
+    transform: translateX(9999px); }
+  .login, .sign-up {
+    box-sizing: border-box;
+    width: -webkit-calc(50% - 10px);
+    width: calc(50% - 10px);
+    border-radius: 10px;
+    -webkit-transition: all 1.25s ease;
+    transition: all 1.25s ease; }
+    .login.move-in, .sign-up.move-in {
+      -webkit-transform: translateX(0px);
+      -ms-transform: translateX(0px);
+      transform: translateX(0px); }
+    .login form, .sign-up form {
+      display: block; } }
+
 header {
   background-color: green;
   min-height: 75px;

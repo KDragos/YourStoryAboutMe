@@ -1,0 +1,90 @@
+.welcome-hero {
+	margin: 0;
+	background: url('/images/fieldwtree.png') no-repeat;
+	background-size: 100%, 100%;
+	width: 100%;
+	height: 100%;
+
+	p {
+		background-color: yellow;
+		width: 90%;
+		margin: 0 auto;
+	}
+	@media screen and (min-width: 600px) {
+		background-image: none;
+	}
+}
+
+.choose-login, .choose-sign-up {
+	display:none; 
+}
+
+.login, .sign-up {
+	background-color:purple;
+	text-align: center;
+	padding: 2px;
+	h1 {
+		display:inline-block;
+	}
+	form, {
+		display:none;
+		button {
+			display:block;
+		}
+		input {
+			width: 70%;
+
+		}
+	}
+	.show {
+		background-color:blue;
+		display:block;
+	}
+}
+
+@media screen and (min-width: 700px) {
+	.welcome-hero {
+		background-image: url('/images/fieldwtree.png');
+		background-size: cover;  
+		min-height: 600px;
+		div {
+			background-color: #ddd;
+			text-align: center;
+			padding: 10px;
+		}
+		p {
+			width: 70%;
+			margin: 0 0 0 auto;
+		}
+	}
+	.choose-login, .choose-sign-up {
+		display:inline-block;
+		padding: 10px;
+		background-color: purple;
+		border: 2px solid yellow;
+		border-radius: 15px;
+
+	}
+	.login {
+		float:left;
+		transform: translateX(-9999px);
+	}
+	.sign-up {
+		float:right;
+		transform: translateX(9999px);
+	}
+	.login, .sign-up {
+		box-sizing:border-box;
+		width: calc(50% - 10px);
+		border-radius: 10px;
+		transition: all 1.25s ease;
+		&.move-in {
+			transform:translateX(0px);
+		}
+		form {
+			display:block;
+		}	
+	}
+
+		
+}

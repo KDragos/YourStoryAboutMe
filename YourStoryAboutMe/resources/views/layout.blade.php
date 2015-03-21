@@ -61,7 +61,8 @@
 	@show
 
 
-	<script src="<?php echo asset('/js/main.js') ?>"></script>
+	<script src="<?php echo asset('/js/build.js') ?>"></script>
+	{{-- <script src="./js/build.js" type="text/javascript"></script> --}}
 	<script src="/node_modules/masonry-layout/dist/masonry.pkgd.min.js"></script>
 </body>
 </html>

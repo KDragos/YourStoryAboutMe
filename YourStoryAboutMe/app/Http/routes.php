@@ -28,6 +28,9 @@ Route::get('profile', function (){
 	return view('profile');
 });
 
+Route::get('welcome', function (){
+	return view('welcomeLayout');
+});
 
 Route::get('story', function (){
 	return view('story');
@@ -35,3 +38,10 @@ Route::get('story', function (){
 Route::get('story/new', function (){
 	return view('storyNew');
 });
+
+Route::post('story/new', 'StoryController@newStory');
+
+
+// Add the user id to this section. Right now it pulls all the stories in the database.
+Route::get('story/all', "StoryController@allStories");
+Route::get('story/{user_id}', "StoryController@userStories");
