@@ -562,6 +562,9 @@ Button Pair
 .button-pair {
   float: right; }
 
+/************
+Button Pair
+**************/
 .story-container.js-masonry {
   text-align: center; }
 
@@ -580,3 +583,17 @@ Button Pair
     .snippet {
       width: -webkit-calc(33.33% - 20px);
       width: calc(33.33% - 20px); } }
+
+/************
+Forms 
+**************/
+form {
+  box-sizing: border-box;
+  padding: 5px;
+  width: 100%; }
+  form .form-group {
+    margin: 0 auto; }
+  form input {
+    width: 100%; }
+  form textarea {
+    width: 100%; }

@@ -11,6 +11,7 @@ class Relationship extends Model {
 	 * @var string
 	 */
 	protected $table = 'relationship';
+	protected $primaryKey = 'relationship_id';
 
 	/**
 	 * The attributes that are mass assignable.

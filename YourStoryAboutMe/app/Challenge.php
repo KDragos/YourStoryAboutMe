@@ -11,7 +11,8 @@ class Challenge extends Model {
 	 * @var string
 	 */
 	protected $table = 'challenge';
-
+	protected $primaryKey = 'challenge_id';
+	
 	/**
 	 * The attributes that are mass assignable.
 	 *

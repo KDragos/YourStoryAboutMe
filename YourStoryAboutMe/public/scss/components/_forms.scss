@@ -1,0 +1,17 @@
+/************
+Forms 
+**************/
+form {
+	box-sizing: border-box;
+	padding: 5px;
+	width: 100%;
+	.form-group {
+		margin: 0 auto;
+	}
+	input {
+		width: 100%;
+	}
+	textarea {
+		width: 100%;
+	}
+}

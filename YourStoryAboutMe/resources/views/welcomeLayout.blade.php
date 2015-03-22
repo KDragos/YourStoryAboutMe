@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,40 +33,23 @@
 				Sign Up
 			</h1>
 		</div>
-
+		@include('errors.list')
 		<div class="login">
 			<h1>Login</h1>
 			<div>
-				<form>
-					<div>
-						<label for="">Input One<input type="text"></label>
-					</div>					
-					<div>
-						<label for="">Input Two<input type="text"></label>
-					</div>
-					<div>
-						<label for="">Input Three<input type="text"></label>
-					</div>
-					<button>Submit</button>
-				</form>
+				{!! Form::open(['url' => '/auth/login']) !!}
+					@include('auth._loginForm', ['submitButtonText' => "Login"])
+				{!! Form::close() !!}	
 			</div>
 		</div>
 		
 		<div class="sign-up">
 			<h1>Sign Up</h1>
 			<div>
-				<form>
-					<div>
-						<label for="">Input One<input type="text"></label>
-					</div>					
-					<div>
-						<label for="">Input Two<input type="text"></label>
-					</div>
-					<div>
-						<label for="">Input Three<input type="text"></label>
-					</div>
-					<button>Submit</button>
-				</form>
+				{!! Form::open(['url' => '/auth/register']) !!}
+					@include('auth._signUpForm', ['submitButtonText' => "Sign Up"])
+				{!! Form::close() !!}	
+				
 			</div>
 		</div>
 	</section>

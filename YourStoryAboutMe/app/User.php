@@ -16,13 +16,16 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 * @var string
 	 */
 	protected $table = 'user';
+	protected $primaryKey = 'user_id';
+
 
 	/**
 	 * The attributes that are mass assignable.
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['first_name', 'middle_name', 'last_name', 'email', 'password'];
+	protected $fillable = ['first_name', 'middle_name', 
+						   'last_name', 'email', 'password'];
 
 
 	/**
@@ -32,4 +35,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	protected $hidden = ['user_id', 'password', 'remember_token'];
 
+	// A user can have many stories.
+	// Can be accessed by $user->stories
+	public function stories() {
+		return $this->hasMany('App\Story');
+	}
 }
