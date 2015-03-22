@@ -18,7 +18,7 @@
 				<button>Invitations</button>
 			</div>
 			<nav>
-				<a href="story/create">New Story</a>
+				<a href="/story/create">New Story</a>
 				<a href="">Search for People</a>
 				<a href="">Your Family Tree</a>
 			</nav>	
@@ -28,7 +28,7 @@
 	@section('hero')
 		<section class="hero">
 			<div>
-				<h1>Welcome, \Auth::User->first_name! </h1>
+				<h1>Welcome, {{ Auth::User()->first_name }}! </h1>
 				<h4>“In creative nonfiction, we are writing “truth” ... and yet in telling the same story, several people might each remember a different “truth”.”</h4>
 			</div>
 		</section>
