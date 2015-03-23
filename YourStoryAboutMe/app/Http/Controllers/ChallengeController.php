@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class ChallengeController extends Controller {
 
-	//
+	public function index() {
+		$challenge = Challenge::all(); 
+		return view('challenge.index', compact('challenge'));
+	}
+
+	
 
 }

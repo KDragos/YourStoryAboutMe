@@ -1,5 +1,3 @@
-
-
 {{-- Main form --}}
 <div class="form-group">
 	{!! Form::label('main_character', 'Main Character:') !!}

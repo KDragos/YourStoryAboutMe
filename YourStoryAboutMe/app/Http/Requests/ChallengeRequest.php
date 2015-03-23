@@ -2,16 +2,16 @@
 
 use App\Http\Requests\Request;
 
-class StoryRequest extends Request {
+class ChallengeRequest extends Request {
 
 	/**
 	 * Determine if the user is authorized to make this request.
 	 *
 	 * @return bool
 	 */
-	public function authorize() {
-		// Add ability to ensure that only logged in users can create new stories.
-		return true;
+	public function authorize()
+	{
+		return false;
 	}
 
 	/**
@@ -19,10 +19,10 @@ class StoryRequest extends Request {
 	 *
 	 * @return array
 	 */
-	public function rules() {
+	public function rules()
+	{
 		return [
-			'main_character' => "required",
-			'story_text' 	 => "required",
+			//
 		];
 	}
 

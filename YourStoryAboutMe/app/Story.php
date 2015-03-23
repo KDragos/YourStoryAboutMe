@@ -19,7 +19,7 @@ class Story extends Model {
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['created_by', // temporary
+	protected $fillable = [ 'created_by',
 			 'story_text', 'main_character',
 			 'seconary_characters', 'published_at',
 			 "created_at", "updated_at"];
@@ -37,7 +37,7 @@ class Story extends Model {
 	 *
 	 * @var array
 	 */
-	protected $hidden = ['story_id'];
+	protected $hidden = ['story_id', 'created_by'];
 
 	/**
 	 * The relationships to other tables.
