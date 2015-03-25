@@ -1,13 +1,24 @@
 {{-- Main form --}}
 <div class="form-group">
-	{!! Form::label('main_character', 'Main Character:') !!}
-	{!! Form::text('main_character', null, ['class' => 'form-control']) !!}	
-</div>
+	{!! Form::label('main_character', 'Main Character:') !!}		
+	<select name="main_character">
+		@foreach($person as $individual) 
+			<option value="{{$individual->person_id}}"> {{$individual->first_name}} {{$individual->middle_name}} {{$individual->last_name}} </option>	
+		@endforeach
+	</select>
+{{-- 	{!! Form::text('main_character', null, ['class' => 'form-control']) !!}	
+ --}}</div>
 
 <div class="form-group">
 	{!! Form::label('secondary_characters', 'Secondary Characters:') !!}
-	{!! Form::text('secondary_characters', null, ['class' => 'form-control']) !!}	
-</div>
+	<select name="secondary_characters">
+		<option value="null"> </option>
+		@foreach($person as $individual) 
+			<option value="{{$individual->person_id}}"> {{$individual->first_name}} {{$individual->middle_name}} {{$individual->last_name}} </option>	
+		@endforeach
+	</select>
+{{-- 	{!! Form::text('secondary_characters', null, ['class' => 'form-control']) !!}	
+ --}}</div>
 
 <div class="form-group">
 	{!! Form::label('story_text', 'Story:') !!}

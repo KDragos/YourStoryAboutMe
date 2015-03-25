@@ -10,8 +10,7 @@ class CreateChallengeTable extends Migration {
 	 *
 	 * @return void
 	 */
-	public function up()
-	{
+	public function up() {
 		Schema::create('challenge', function(Blueprint $table) {
 			$table->increments('challenge_id')->unsigned();
 			

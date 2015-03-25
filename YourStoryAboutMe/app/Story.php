@@ -21,7 +21,7 @@ class Story extends Model {
 	 */
 	protected $fillable = [ 'created_by',
 			 'story_text', 'main_character',
-			 'seconary_characters', 'published_at',
+			 'secondary_characters', 'published_at',
 			 "created_at", "updated_at"];
 	/**
 	 * The attributes using Carbon.

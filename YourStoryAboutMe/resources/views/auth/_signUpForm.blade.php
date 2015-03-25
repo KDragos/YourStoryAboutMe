@@ -12,10 +12,17 @@
 	{!! Form::text('last_name', null, ['class' => 'form-control']) !!}	
 </div>
 <div class="form-group">
+	{!! Form::label('suffix', 'Suffix:') !!}
+	{!! Form::text('suffix', null, ['class' => 'form-control']) !!}	
+</div>
+<div class="form-group">
+	{!! Form::label('birth_date', 'Birth Date:') !!}
+	{!! Form::input('date', 'birth_date', null, ['class' => 'form-control']) !!}	
+</div>
+<div class="form-group">
 	{!! Form::label('email', 'Email:') !!}
 	{!! Form::email('email', null, ['class' => 'form-control']) !!}	
 </div>
-
 <div class="form-group">
 	{!! Form::label('password', 'Password:') !!}
 	{!! Form::password('password', null, ['class' => 'form-control']) !!}	
@@ -24,7 +31,6 @@
 	{!! Form::label('password_confirmation', 'Confirm Password:') !!}
 	{!! Form::password('password_confirmation', null, ['class' => 'form-control']) !!}	
 </div>
-
 <div class="form-group">
 	{!! Form::submit($submitButtonText, ['class' => 'btn btn-primary form-control']) !!}
 </div>

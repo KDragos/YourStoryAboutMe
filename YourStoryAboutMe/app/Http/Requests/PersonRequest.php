@@ -23,8 +23,7 @@ class PersonRequest extends Request {
 	{
 		return [
 			'first_name' => 'required',
-			'last_name'  => 'required',
-			'birth_date' => 'required|date'
+			'last_name'  => 'required'
 		];
 	}
 

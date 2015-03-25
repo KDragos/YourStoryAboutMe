@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Your Story About Me</title>
 	<link rel="stylesheet" href="<?php echo asset('css/app.css')?>">
+	<link rel="stylesheet" href="<?php echo asset('css/chosen.css')?>">
 	<link rel="stylesheet" href="<?php echo asset('css/styles.css')?>">
 
 
@@ -16,10 +17,11 @@
 			<div>
 				<button>Update Profile</button>
 				<button>Invitations</button>
+				<a href="/auth/logout">Logout</a>
 			</div>
 			<nav>
 				<a href="/story/create">New Story</a>
-				<a href="">Search for People</a>
+				<a href="/person">Search for People</a>
 				<a href="">Your Family Tree</a>
 			</nav>	
 		</header>

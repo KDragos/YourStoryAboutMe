@@ -11,7 +11,7 @@ class RelationshipRequest extends Request {
 	 */
 	public function authorize()
 	{
-		return false;
+		return true;
 	}
 
 	/**
@@ -22,7 +22,9 @@ class RelationshipRequest extends Request {
 	public function rules()
 	{
 		return [
-			//
+			'person_id1'   => 'required',
+			'person_id2'   => 'required',
+			'relationship' => 'required'
 		];
 	}
 

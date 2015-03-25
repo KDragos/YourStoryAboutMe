@@ -11,7 +11,11 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', function (){
+	// If not logged in.
+	return view('welcome');
+	// If users are logged in, go to the profile page.
+});
 
 Route::get('home', 'HomeController@index');
 
@@ -20,35 +24,25 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-
+Route::get('profile', function (){
+	// This will eventually go to a user controller that will send them to a user profile
+	// 		where users can see the stories about them, click a link to see stories they've
+	//		written, connections, search for other people. 
+	return view('profile');
+});
 
 Route::get('layout', function(){
 	return view('layout');
 });
-
-Route::get('profile', function (){
-	return view('profile');
-});
-
 Route::get('welcome', function (){
 	return view('welcomeLayout');
 });
 
-// Route::get('story', function (){
-// 	return view('story');
-// });
-
-
-// Route::get('story', 'StoryController@allStories');
-
-// Route::get('story/new', 'StoryController@show');
-// Route::post('story', 'StoryController@store');
-// Route::get('story/{id}/edit', "StoryController@edit")
-
-// // Add the user id to this section. Right now it pulls all the stories in the database.
-// Route::get('story/all', "StoryController@allStories");
-// Route::get('story/{user_id}', "StoryController@userStories");
 
 Route::resource('story', 'StoryController');
 Route::resource('relationship', 'RelationshipController');
 Route::resource('person', 'PersonController');
+
+// Routes to claim a person. 
+Route::get('person/{id}/claim', 'PersonController@claim');
+Route::post('person/{id}/claim', 'PersonController@processClaim');

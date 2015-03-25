@@ -21,16 +21,12 @@ class Person extends Model {
 				 		   'last_name', 'suffix', 'birth_date',
 				 		   'death_date'];
 
-	/**
-	 * The attributes excluded from the model's JSON form.
-	 *
-	 * @var array
-	 */
-	protected $hidden = ['user_id', 'person_id'];
+
+	protected $guarded = ['user_id', 'person_id'];
 
 
 	public function owner() {
-    	return $this->belongsTo('App\User');
+    	return $this->hasOne('App\User');
     }
 	
 	public function stories() {

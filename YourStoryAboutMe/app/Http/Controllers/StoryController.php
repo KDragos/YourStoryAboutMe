@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\AuthController;
 use App\Http\Requests\StoryRequest;
 use App\Story;
+use App\Person;
 use Carbon\Carbon;
 use Request;
 use DB;
@@ -23,20 +24,15 @@ class StoryController extends Controller {
 
 	// Sends users to a form to create a new story.
 	public function create() {
-		return view('story.create');
+		$person = Person::orderBy('last_name')->get();
+
+		return view('story.create', compact('person'));
 	}
 	
 
-	// public function userStories($user_id) {
-	// 	// $stories = Story::all(\Auth::User()->user_id);
-	// 	$stories = Story::findOrFail($user_id)->lastest("published_at")->get();
-		
-	// 	return view('userProfile')->with('stories', $stories);
-	// }
-
-
 	// Validates we have the appropriate information and stores the data in the database.
 	public function store(StoryRequest $request) {
+
 		$input = Request::all();
 		$input['created_by'] = \Auth::id();
 		$input['created_at'] = Carbon::now();
@@ -48,35 +44,35 @@ class StoryController extends Controller {
 		return redirect('story');
 	}
 
-	// Retrieves and displays a single story.
-	public function show($id) {
-		$story = Story::findOrFail($id);
+	// Uses route model binding to retrieve and display a single story.
+	public function show(Story $story) {
 		return view('story.show', compact('story'));
 	}
 
-	// Retrieves a story from the database and redirects users to a form for editing.
-	public function edit($story_id) {
-		$story = DB::table('story')->where('story_id', '=', $story_id)->get();
+	// Uses route model binding to retrieve a story from database.
+	// 	Then redirects users to a form for editing.
+	public function edit(Story $story) {
 		return view('story.edit')->with('story', $story);
 	}
 	
 	
-	// Collects and varifies information give, and updates the record in the database.
-	public function update($story_id, StoryRequest $request) {
-		$story = DB::table('story')->where('story_id', '=', $story_id)->get();
+	// Uses route model binding to retrieve a story from the database.
+	// Collects and varifies information given, and updates the record in the database.
+	public function update(Story $story, StoryRequest $request) {
+		// This is accessed via a patch request.
 		$input = Request::Except('_method', '_token');
 		$input['updated_at'] = Carbon::now();
 		
-		DB::table('story')->where('story_id', "=", $story_id)->update($input);
-
+		$story->update($input);
 		return redirect('story');
 	}
 
 	// Deletes the record from the database. 
-	public function destroy() {
-		// $story = Story::find();
+	public function destroy(Story $story) {
+		// We'd get here via a delete request. 
+		$story->delete();
+		return redirect('story');
 
-		// $story->delete();
 	}
 
 }

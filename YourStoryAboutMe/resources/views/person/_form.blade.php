@@ -25,13 +25,23 @@
 </div>
 
 <div class="form-group">
-	{!! Form::label('is_alive', 'Is this person still alive?') !!}
-	{!! Form::checkbox('is_alive', true) !!}
+	{!! Form::label('is_alive', 'Is this person still alive?', ['id' => 'is_alive', 'attribute' => 'required']) !!}
+	<div>
+		Yes: {!! Form::checkbox('is_alive', true, ['attribute' => 'checked']) !!}
+	</div>
+{{-- 	<div>
+		No: {!! Form::radio('is_alive', false) !!}		
+	</div> --}}
+
 </div>
 
 <div class="form-group">
 	{!! Form::label('death_date', 'Died On:') !!}
-	{!! Form::input('date', 'death_date', null, ['class' => 'form-control']) !!}	
+	{!! Form::input('date', 'death_date', null, 
+					['class' => 'form-control',
+					 'id' => 'death_date'
+					 ]) !!}	
+	{{-- Fix this error of this needing to be a required field.  --}}
 </div>
 
 <div class="form-group">

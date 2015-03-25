@@ -29,6 +29,23 @@ $(function() {
 		$('.login').removeClass("move-in");
 	});
 	
+	// Person form validation
+	// if(window.location.pathname == '/person{id}edit' || 
+
+		// ToDo Note: This still doens't work correctly.
+	if (window.location.pathname == '/person/create') {
+		$("#is_alive").on('click', function(){
+			$("#death_date").toggleAttr('required');
+		});
+	
+
+	}
+
+
+
+
+
+
 });
 
 

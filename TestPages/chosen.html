@@ -1,0 +1,55 @@
+<html>
+<head>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+	<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+	<script src="http://harvesthq.github.com/chosen/chosen/chosen.jquery.js"></script>
+	<link rel="stylesheet" href="http://harvesthq.github.com/chosen/chosen/chosen.css">
+</head>
+<body>
+
+<script type="text/javascript">
+$(function(){
+    $(".chosen-select").chosen();
+});
+</script>
+
+	<select data-placeholder="Choose a country..." style="width:350px;" multiple class="chosen-select chosen-container chosen-container-multi">
+		<option value="1">Something</option>
+		<option value="2">Something Else</option>
+		<option value="3">Something Even More</option>
+		<option value="4">Some other stuff</option>
+
+	</select>
+	<div class="chosen-container chosen-container-multi" title>
+		<ul class="chosen-choices">
+			<li class="search-choice">
+				<span>Choice Name</span>
+				<a class="search-choice-close" data-option-array-index="5"></a>
+			</li>
+			<li class="search-field">
+				<input type="text" value="Your stuff here" class autocomplete="on">
+			</li>
+		</ul>
+	</div>
+<select class="chosen-select" multiple="true" name="faculty" style="width:200px;">
+        <option value="AC">A</option>
+        <option value="AD">B</option>
+        <option value="AM">C</option>
+        <option value="AP">D</option>
+</select>
+
+
+</body>
+</html>
+	
+
+<!-- 	    // <script src="/bower_components/chosen_v1.4.1/chosen.jquery.js"></script>
+	    // <script src="/bower_components/chosen_v1.4.1/chosen.min.css"></script> -->
+	<script>
+	// $(function(){
+	// 	$(".chosen-select").chosen({no_results_text: "Oops, nothing found!"}); 
+	// });
+	</script>
+</body>
+</html>
