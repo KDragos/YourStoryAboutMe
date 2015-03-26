@@ -15,7 +15,7 @@ class PersonController extends Controller {
 	// 		Note: This is NOT the same as users.
 	public function index() {
 		$person = Person::orderBy('last_name')->get();
-		return view('person.index', compact('person'));
+		return view('person.index')->with('person', $person);
 	}
 
 	// Displays the details of a specific person.

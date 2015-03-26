@@ -28,7 +28,7 @@ class Story extends Model {
 	 *
 	 * @var array
 	 */
-	protected $dates = ["published_at", "updated_at", "created_at"];
+	protected $dates = ["published_at", "updated_at", "created_at", 'created_by'];
 
 
 
@@ -46,7 +46,7 @@ class Story extends Model {
 	 */
 	// A story is created by one user.
 	public function created_by() {
-        return $this->hasOne('App\User');
+        return $this->hasOneOrMany('App\User');
     }
 
 

@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use Illuminate\Auth\Authenticatable;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\AuthController;
 use App\Http\Requests\StoryRequest;
@@ -33,13 +34,15 @@ class StoryController extends Controller {
 	// Validates we have the appropriate information and stores the data in the database.
 	public function store(StoryRequest $request) {
 
-		$input = Request::all();
+		// ToDo: fix this to prevent an error.
+		$input = Request::Except('_token');
 		$input['created_by'] = \Auth::id();
 		$input['created_at'] = Carbon::now();
 		$input['updated_at'] = Carbon::now();
 		$story = new Story($input);
 		Story::create($input);
-		\Auth::user()->stories()->save($story);
+		// \Auth::user()->stories()->save($story);
+		dd($input);
 		
 		return redirect('story');
 	}

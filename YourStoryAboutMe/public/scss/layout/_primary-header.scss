@@ -5,12 +5,20 @@ header {
 
 	nav {
 		background-color: red;
-		a {
+		> a {
 			border: 1px solid yellow;
 			border-radius:5px;
 			display:block;
 			padding: 5px;
 		}
+		// .sub-nav {
+		// 	visibility: hidden;
+		// 	position:absolute;
+		// 	.show {
+		// 		visibility: visible;
+		// 		position: relative;
+		// 	}
+		// }
 	}
 	img {
 		height: 100px;

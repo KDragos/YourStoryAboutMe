@@ -69,5 +69,15 @@ Button Pair
 
 
 /************
-Button Pair
+Canvas
 **************/
+.canvas-wrapper {
+	overflow:scroll;
+	border: 2px solid black;
+	text-align: center;
+}
+canvas {
+	border: 2px solid orange;
+	width: 100%;
+	overflow: scroll;
+}

@@ -5,6 +5,7 @@
 	<title>Your Story About Me</title>
 	<link rel="stylesheet" href="<?php echo asset('css/styles.css')?>">
 	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Playball|Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>
 	<script src="./js/scripts.js"></script>
 
 </head>

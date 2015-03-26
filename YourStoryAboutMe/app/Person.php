@@ -19,10 +19,10 @@ class Person extends Model {
 	 */
 	protected $fillable = ['first_name', 'middle_name',	
 				 		   'last_name', 'suffix', 'birth_date',
-				 		   'death_date'];
+				 		   'death_date', 'user_id'];
 
 
-	protected $guarded = ['user_id', 'person_id'];
+	protected $guarded = ['person_id'];
 
 
 	public function owner() {

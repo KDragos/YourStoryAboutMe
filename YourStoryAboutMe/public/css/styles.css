@@ -329,6 +329,9 @@ td, th {
   font: inherit;
   margin: 0; }
 
+* {
+  font-family: "Shadows Into Light Two"; }
+
 a {
   text-decoration: none; }
 
@@ -353,10 +356,10 @@ Layout -Anything related to layout
 **********/
 .welcome-hero {
   margin: 0;
-  background: url('/images/fieldwtree.png') no-repeat;
-  background-size: 100%, 100%;
-  width: 100%;
-  height: 100%; }
+  background: url('/images/treebackground.png') no-repeat;
+  background-size: cover;
+  background-position: center center;
+  overflow: hidden; }
   .welcome-hero p {
     background-color: yellow;
     width: 90%;
@@ -386,9 +389,8 @@ Layout -Anything related to layout
 
 @media screen and (min-width: 700px) {
   .welcome-hero {
-    background-image: url('/images/fieldwtree.png');
-    background-size: cover;
-    min-height: 600px; }
+    background-image: url('/images/treebackground.png');
+    background: cover; }
     .welcome-hero div {
       background-color: #ddd;
       text-align: center;
@@ -432,7 +434,7 @@ header {
   text-align: center; }
   header nav {
     background-color: red; }
-    header nav a {
+    header nav > a {
       border: 1px solid yellow;
       border-radius: 5px;
       display: block;
@@ -496,7 +498,7 @@ footer {
     margin: 0 auto; }
   @media screen and (min-width: 750px) {
     .hero {
-      background: -webkit-radial-gradient(rgba(181, 189, 200, 0.2) 0%, rgba(130, 140, 149, 0.4) 20%, rgba(130, 140, 149, 0.6) 40%, rgba(40, 52, 59, 0.8) 100%), url("/images/forrest.png") no-repeat 80% 10%;
+      background: -webkit-radial-gradient(rgba(181, 189, 200, 0.2) 0%, rgba(130, 140, 149, 0.4) 20%, rgba(130, 140, 149, 0.6) 40%, rgba(40, 52, 59, 0.8) 100%), url("/images/treebackground.png") no-repeat 80% 10%;
       min-height: 200px;
       position: relative; }
       .hero div {
@@ -563,13 +565,21 @@ Button Pair
   float: right; }
 
 /************
-Button Pair
+Canvas
 **************/
+.canvas-wrapper {
+  overflow: scroll;
+  border: 2px solid black;
+  text-align: center; }
+
+canvas {
+  border: 2px solid orange;
+  width: 100%; }
+
 .story-container.js-masonry {
   text-align: center; }
 
 .snippet {
-  margin: 7px;
   border: 3px solid red;
   text-align: left;
   display: inline-block;

@@ -4,7 +4,7 @@
 	<h1>New Relationship</h1>
 	@include('errors.list')
 
-	{!! Form::open(['url' => 'relationship']) !!}
+	{!! Form::open(['action' => 'RelationshipController@store']) !!}
 		@include('relationship._form', ['submitButtonText' => "Save this Relationship"]);
 	{!! Form::close() !!}	
 	

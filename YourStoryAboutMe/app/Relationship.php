@@ -18,14 +18,14 @@ class Relationship extends Model {
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['relationship', 'updated_at'];
+	protected $fillable = ['relationship', 'updated_at', 'person_id1', 'person_id2'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.
 	 *
 	 * @var array
 	 */
-	protected $hidden = ['person_id1', 'person_id2'];
+	protected $guarded = ['person_id1', 'person_id2'];
 
 }
 

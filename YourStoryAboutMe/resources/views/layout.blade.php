@@ -6,6 +6,12 @@
 	<link rel="stylesheet" href="<?php echo asset('css/app.css')?>">
 	<link rel="stylesheet" href="<?php echo asset('css/chosen.css')?>">
 	<link rel="stylesheet" href="<?php echo asset('css/styles.css')?>">
+	<link href='http://fonts.googleapis.com/css?family=Playball|Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>
+	<script src="/bower_components/jquery/dist/jquery.js"> </script>
+	<script src="/js/arbor/lib/arbor.js"> </script>
+	<script src="/js/arbor/lib/arbor-tween.js"> </script>
+	<script src="/js/arbor/demos/halfviz/src/renderer.js"> </script>
+	<script src="/js/arbor/demos/_/graphics.js"> </script>
 
 
 </head>
@@ -20,9 +26,18 @@
 				<a href="/auth/logout">Logout</a>
 			</div>
 			<nav>
-				<a href="/story/create">New Story</a>
+				<a href="/story">Stories</a>
+{{-- 					<ul class="sub-nav">
+						<a href="/story/create">New Story</a>
+					</ul> --}}
 				<a href="/person">Search for People</a>
-				<a href="">Your Family Tree</a>
+					<ul class="sub-nav">
+						<a href="/person/create">New Person</a>
+					</ul>
+				<a href="/relationship">Your Family Tree</a>
+					<ul class="sub-nav">
+						<a href="/relationship/create">New Connection</a>
+					</ul>
 			</nav>	
 		</header>
 	@show
@@ -63,7 +78,8 @@
 	@show
 
 
-	<script src="<?php echo asset('/js/build.js') ?>"></script>
-	<script src="/node_modules/masonry-layout/dist/masonry.pkgd.min.js"></script>
+	<script src="<?php echo asset('/build.js') ?>"></script>
+	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
 </body>
 </html>

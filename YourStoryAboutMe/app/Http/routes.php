@@ -46,3 +46,9 @@ Route::resource('person', 'PersonController');
 // Routes to claim a person. 
 Route::get('person/{id}/claim', 'PersonController@claim');
 Route::post('person/{id}/claim', 'PersonController@processClaim');
+
+Route::get('family', function(){
+	return view('family');
+});
+
+Route::get('api/{id}', 'APIController@show');

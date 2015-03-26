@@ -7,9 +7,6 @@
 	<div class="author-details">
 		{{ $person->birth_date }} - {{ $person->death_date }}
 		{{-- <img src=" image for user would go here somewhere. " alt=""> --}}
-		@if ($person->user_id == NULL)
-			<a href="/person/{{$person->person_id}}/claim">Are you {{ $person->first_name}}?</a>
-		@endif
 	</div>
 	<div>
 		<h2>View {{$person->first_name}}'s Stories</h2>				

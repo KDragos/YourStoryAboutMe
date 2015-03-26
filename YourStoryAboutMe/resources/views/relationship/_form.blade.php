@@ -3,7 +3,7 @@
 	<input list="people" name="person_id1" required>
 	<datalist id="people">
 		@foreach($people as $person) 
-			<option value="{{$person->first_name}} {{$person->middle_name}} {{$person->last_name}}"> {{$person->first_name}} {{$person->middle_name}} {{$person->last_name}} </option>	
+			<option value="{{$person->first_name}} {{$person->middle_name}} {{$person->last_name}}">{{$person->first_name}} {{$person->middle_name}} {{$person->last_name}} </option>	
 		@endforeach
 	</datalist>
 </div>	
