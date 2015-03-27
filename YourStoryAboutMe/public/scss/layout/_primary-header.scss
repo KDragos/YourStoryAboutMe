@@ -1,55 +1,71 @@
 header {
-	background-color: green;
+	background-color: $red;
 	min-height: 75px;
 	text-align: center;
-
+	h1 {
+		font-family: $secondary-font;
+		color: #fff;
+	}
+	a {
+		color: $tan;
+		display:block;
+		padding: 6px;
+	}
 	nav {
-		background-color: red;
+		margin-left: 100px;
+		text-align: left;
 		> a {
-			border: 1px solid yellow;
-			border-radius:5px;
-			display:block;
-			padding: 5px;
+			margin-left: 30px;
 		}
-		// .sub-nav {
-		// 	visibility: hidden;
-		// 	position:absolute;
-		// 	.show {
-		// 		visibility: visible;
-		// 		position: relative;
-		// 	}
-		// }
+		.sub-nav {
+			visibility: hidden;
+			position:absolute;
+			.show {
+				visibility: visible;
+				position: relative;
+			}
+		}
 	}
 	img {
 		height: 100px;
 		width: 100px;
+		float: left;
 	}
 	div {
+		float: right;
 		text-align:right;
+		padding: 3px;
+
+		button {
+			border-radius: 30px;
+			display:none;
+		}
 	}
 
 	@media screen and (min-width: 750px) {
-		background-color: purple;
 		overflow: hidden;
 		position: relative;
+		h1 {
+			float:left;
+		}
 		nav {
-			background-color: red;
 			bottom: 25px;
 			left: 0;
 			position: absolute;
 			right: 0;
 			a {
+				margin-left: 10px;
 				display: inline;
 				padding: 2px 10px;
 			}
 		}
 		img {
-			float:left;
 			height: 150px;
 			width: 150px;
 		}
 		div {
-			float:right;
+			padding: 15px;
 		}
+
 	}	
 }

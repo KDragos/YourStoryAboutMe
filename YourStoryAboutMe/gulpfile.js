@@ -10,8 +10,8 @@ var autoprefixer = require('gulp-autoprefixer');
 
 gulp.task("sass", function(){
 	gulp.src([
-    "./public/scss/*.scss",
-    "./bower_components/chosen_v1.4.1/chosen.css",
+    "./public/scss/styles.scss"
+    // "./bower_components/chosen_v1.4.1/chosen.css"
     ])
 		.pipe(sass())
 		.pipe(autoprefixer({

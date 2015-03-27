@@ -16,18 +16,18 @@
 		<section>
 			<div>
 				<h1>Welcome to Your Story About Me! </h1>
-				<h4>“In creative nonfiction, we are writing “truth” ... and yet in telling the same story, several people might each remember a different “truth”.”</h4>
+				<h3>“In creative nonfiction, we are writing “truth” ... and yet in telling the same story, several people might each remember a different “truth”.”</h3>
 			</div>
-			<p>As the years pass, our memories begin to fade and those stories become lost. Finally, there's a place to share those stories!</p>
-			<p>Your Story About Me is a place where you can share stories and memories of loved ones. Keep in mind, when reading these stories that each story is written by a real person and their "truth" may not be the exact same memory as you remember it.</p>
+			<p>As the years pass, our memories begin to fade and those stories become lost. Finally, there's a place to share those stories!
+			Your Story About Me is a place where you can share stories and memories of loved ones. Keep in mind, when reading these stories that each story is written by a real person and their "truth" may not be the exact same memory as you remember it.</p>
 		</section>
 		@show
 		<div>
-			You can either 
+			
 			<h1 class="choose-login">
 				Login
 			</h1>
-			or 
+			
 			<h1 class="choose-sign-up">
 				Sign Up
 			</h1>

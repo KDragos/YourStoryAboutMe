@@ -1,7 +1,9 @@
 .hero {
-	background-color:yellow;
+	background-color:transparentize($blue, 0.7);
 	min-height:100px;
-	
+	padding: 10px;
+	text-shadow: 1px 1px 2px $tan;
+
 	&:after {
 		clear:both;
 		content:"";
@@ -21,10 +23,16 @@
 								 rgba(130,140,149,0.60) 40%,
 								 rgba(40,52,59,0.8) 100%),
 		url("/images/treebackground.png") no-repeat 80% 10%; 
+	background-size: cover;
 	min-height: 200px;
 	position: relative;
 		div {
-			background-color:blue;
+			background-color: transparentize($tan, 0.4);
+			padding: 3px;
+			text-shadow: 1px 1px 2px $tan;
+			color: $blue;
+			text-align: center;
+			border-radius: 10px;
 			margin-left: 25px;
 			position: absolute;
 			top: 50px;

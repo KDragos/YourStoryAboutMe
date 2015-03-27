@@ -13458,12 +13458,11 @@ $(function() {
 		var container = document.querySelector('.container');
 		var msnry = new Masonry( container, {
 		  // options
-		  columnWidth: 100,
+		  columnWidth: 200,
 		  itemSelector: '.snippet',
-		  isFitWidth: true,
 		  transitionDuration: '0.2',
-
-
+      position: 'relative',
+      isFitWidth: true
 		});
 
 		msnry.layout();
@@ -13472,6 +13471,17 @@ $(function() {
 	
 
 	// Welcome page layout js.
+      // Mobile js.
+    $(".login").on("click", function(){
+        $(this).find('form').toggleClass("show");
+        $('.sign-up form').removeClass("show");
+    });
+    $(".sign-up").on("click", function(){
+        $(this).find('form').toggleClass("show");
+        $('.login form').removeClass("show");
+    });
+
+      // Desk Top js.
 	$(".choose-login").on("click", function(){
 		$(".login").toggleClass("move-in");
 		$('.sign-up').removeClass("move-in");
@@ -13493,19 +13503,18 @@ $(function() {
         var graphData = {
             nodes: {},
             edges: {
-
+               
             }
         }
-        
+
         // need a placeholder for 1. 
         $.get('api/1').success(function(data){
             relations = data;
 
           
             graphData.nodes[data.person_id] = {
-                color: "red",
+                color: "#014890",
                 shape: "dot",
-                // shape: "<div>",
                 label: data.first_name + " " + data.middle_name + " " + data.last_name
             };
 
@@ -13515,13 +13524,14 @@ $(function() {
                 console.log(typeof(relation) + "and "  + relation.first_name);
 
                     graphData.nodes[relation.person_id] = {
-                        color: 'green',
+                        color: '#014890',
                         shape: 'dot',
                         label: relation.first_name + " " + relation.middle_name + " " + relation.last_name
                     }
 
                     graphData.edges[data.person_id][relation.person_id] = {};                     
             });
+            // graphData.edges.data-{style: "->"};
             sys.graft(graphData);
 
 

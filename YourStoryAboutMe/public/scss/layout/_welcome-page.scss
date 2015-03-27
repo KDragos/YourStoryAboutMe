@@ -2,15 +2,28 @@
 	margin: 0;
 	background: url('/images/treebackground.png') no-repeat;
 	background-size: cover;
-	background-position: center center;
+	background-position: absolute;
+	// background-position: center bottom;
 	overflow:hidden;
-	// width: 100%;
-	// height: 100%;
-
-	p {
-		background-color: yellow;
+	padding: 5px;
+	h1 {
+		font-family: $secondary-font, cursive;
+		text-shadow: 2px 2px 2px $blue;
+		color: #fff;
+		width: 80%;
+		text-align: center;
+	}
+	p, h3 {
+		background-color: transparentize($tan, 0.3);
+		color: $black;
+		text-shadow: 1px 1px 2px $tan;
 		width: 90%;
-		margin: 0 auto;
+		margin: 10px auto;
+		padding: 10px;
+		border-radius: 25px;
+	}
+	h3 {
+		margin: 20px auto;
 	}
 	@media screen and (min-width: 600px) {
 		background-image: none;
@@ -22,14 +35,22 @@
 }
 
 .login, .sign-up {
-	background-color:purple;
+	background-color:$red;
+	color: $tan;
+	border: 3px solid $blue;
+	border-radius: 25px;
+	display: block;
+	margin: 0 auto;
 	text-align: center;
-	padding: 2px;
+	width: 90%;
 	h1 {
 		display:inline-block;
 	}
-	form, {
+	form {
 		display:none;
+		&.show {
+			display:block;
+		}
 		button {
 			display:block;
 		}
@@ -37,10 +58,6 @@
 			width: 70%;
 
 		}
-	}
-	.show {
-		background-color:blue;
-		display:block;
 	}
 }
 

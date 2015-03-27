@@ -20,9 +20,10 @@
 	@section('header')
 		<header>
 			<a href="/profile"><img src="/images/logotree.png" alt="Logo"></a>
+			<h1>Your Story About Me</h1>
 			<div>
-				<button>Update Profile</button>
-				<button>Invitations</button>
+{{-- 				<button>Update Profile</button>
+				<button>Invitations</button> --}}
 				<a href="/auth/logout">Logout</a>
 			</div>
 			<nav>

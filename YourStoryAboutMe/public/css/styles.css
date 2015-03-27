@@ -358,12 +358,25 @@ Layout -Anything related to layout
   margin: 0;
   background: url('/images/treebackground.png') no-repeat;
   background-size: cover;
-  background-position: center center;
-  overflow: hidden; }
-  .welcome-hero p {
-    background-color: yellow;
+  background-position: absolute;
+  overflow: hidden;
+  padding: 5px; }
+  .welcome-hero h1 {
+    font-family: "Playball", cursive, cursive;
+    text-shadow: 2px 2px 2px #014890;
+    color: #fff;
+    width: 80%;
+    text-align: center; }
+  .welcome-hero p, .welcome-hero h3 {
+    background-color: rgba(244, 173, 85, 0.7);
+    color: #00000C;
+    text-shadow: 1px 1px 2px #F4AD55;
     width: 90%;
-    margin: 0 auto; }
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 25px; }
+  .welcome-hero h3 {
+    margin: 20px auto; }
   @media screen and (min-width: 600px) {
     .welcome-hero {
       background-image: none; } }
@@ -372,20 +385,24 @@ Layout -Anything related to layout
   display: none; }
 
 .login, .sign-up {
-  background-color: purple;
+  background-color: #69150D;
+  color: #F4AD55;
+  border: 3px solid #014890;
+  border-radius: 25px;
+  display: block;
+  margin: 0 auto;
   text-align: center;
-  padding: 2px; }
+  width: 90%; }
   .login h1, .sign-up h1 {
     display: inline-block; }
   .login form, .sign-up form {
     display: none; }
+    .login form.show, .sign-up form.show {
+      display: block; }
     .login form button, .sign-up form button {
       display: block; }
     .login form input, .sign-up form input {
       width: 70%; }
-  .login .show, .sign-up .show {
-    background-color: blue;
-    display: block; }
 
 @media screen and (min-width: 700px) {
   .welcome-hero {
@@ -429,53 +446,73 @@ Layout -Anything related to layout
       display: block; } }
 
 header {
-  background-color: green;
+  background-color: #69150D;
   min-height: 75px;
   text-align: center; }
+  header h1 {
+    font-family: "Playball", cursive;
+    color: #fff; }
+  header a {
+    color: #F4AD55;
+    display: block;
+    padding: 6px; }
   header nav {
-    background-color: red; }
+    margin-left: 100px;
+    text-align: left; }
     header nav > a {
-      border: 1px solid yellow;
-      border-radius: 5px;
-      display: block;
-      padding: 5px; }
+      margin-left: 30px; }
+    header nav .sub-nav {
+      visibility: hidden;
+      position: absolute; }
+      header nav .sub-nav .show {
+        visibility: visible;
+        position: relative; }
   header img {
     height: 100px;
-    width: 100px; }
+    width: 100px;
+    float: left; }
   header div {
-    text-align: right; }
+    float: right;
+    text-align: right;
+    padding: 3px; }
+    header div button {
+      border-radius: 30px;
+      display: none; }
   @media screen and (min-width: 750px) {
     header {
-      background-color: purple;
       overflow: hidden;
       position: relative; }
+      header h1 {
+        float: left; }
       header nav {
-        background-color: red;
         bottom: 25px;
         left: 0;
         position: absolute;
         right: 0; }
         header nav a {
+          margin-left: 10px;
           display: inline;
           padding: 2px 10px; }
       header img {
-        float: left;
         height: 150px;
         width: 150px; }
       header div {
-        float: right; } }
+        padding: 15px; } }
 
 footer {
-  background-color: orange;
-  display: block;
-  padding: 2px; }
+  background-color: #69150D;
+  color: #ccc;
+  display: block; }
   footer div {
-    border: 2px solid grey;
     box-sizing: border-box;
     display: block;
+    padding: 5px;
+    margin: 5px;
     width: 100%; }
     footer div:nth-child(3) {
       display: none; }
+  footer h2 {
+    color: #F4AD55; }
   @media screen and (min-width: 750px) {
     footer div {
       display: inline-block;
@@ -486,8 +523,10 @@ footer {
         display: inline-block; } }
 
 .hero {
-  background-color: yellow;
-  min-height: 100px; }
+  background-color: rgba(1, 72, 144, 0.3);
+  min-height: 100px;
+  padding: 10px;
+  text-shadow: 1px 1px 2px #F4AD55; }
   .hero:after {
     clear: both;
     content: "";
@@ -499,10 +538,16 @@ footer {
   @media screen and (min-width: 750px) {
     .hero {
       background: -webkit-radial-gradient(rgba(181, 189, 200, 0.2) 0%, rgba(130, 140, 149, 0.4) 20%, rgba(130, 140, 149, 0.6) 40%, rgba(40, 52, 59, 0.8) 100%), url("/images/treebackground.png") no-repeat 80% 10%;
+      background-size: cover;
       min-height: 200px;
       position: relative; }
       .hero div {
-        background-color: blue;
+        background-color: rgba(244, 173, 85, 0.6);
+        padding: 3px;
+        text-shadow: 1px 1px 2px #F4AD55;
+        color: #014890;
+        text-align: center;
+        border-radius: 10px;
         margin-left: 25px;
         position: absolute;
         top: 50px;
@@ -574,25 +619,34 @@ Canvas
 
 canvas {
   border: 2px solid orange;
-  width: 100%; }
+  width: 100%;
+  overflow: scroll; }
 
-.story-container.js-masonry {
-  text-align: center; }
+.story-container {
+  text-align: center;
+  position: relative; }
+
+.js-masonry {
+  margin: 0 auto; }
 
 .snippet {
-  border: 3px solid red;
+  border: 1px solid #69150D;
+  box-sizing: border-box;
+  padding: 3px;
+  margin: 5px;
   text-align: left;
-  display: inline-block;
   width: -webkit-calc(100% - 20px);
   width: calc(100% - 20px); }
+  .snippet p {
+    padding: 3px; }
   @media screen and (min-width: 700px) {
     .snippet {
-      width: -webkit-calc(50% - 20px);
-      width: calc(50% - 20px); } }
+      width: -webkit-calc(50% - 15px);
+      width: calc(50% - 15px); } }
   @media screen and (min-width: 950px) {
     .snippet {
-      width: -webkit-calc(33.33% - 20px);
-      width: calc(33.33% - 20px); } }
+      width: -webkit-calc(33.33% - 10px);
+      width: calc(33.33% - 10px); } }
 
 /************
 Forms 

@@ -1,15 +1,19 @@
 footer {
-	background-color: orange;
+	background-color: $red;
+	color: #ccc;
 	display:block;
-	padding: 2px;
 	div {
-		border: 2px solid grey;
 		box-sizing: border-box;
 		display: block;
+		padding: 5px;
+		margin: 5px;
 		width: 100%;
 		&:nth-child(3) {
 			display: none;
 		}
+	}
+	h2 {
+		color: $tan;
 	}
 	@media screen and (min-width: 750px) {
 		div {
