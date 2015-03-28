@@ -336,20 +336,19 @@ a {
   text-decoration: none; }
 
 main {
-  background-color: yellow;
   box-sizing: border-box;
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  overflow: scroll; }
   main:after {
     clear: both;
     content: "";
     display: block; }
   @media screen and (min-width: 750px) {
     main {
-      border: 5px solid magenta;
       margin: 0 auto;
-      width: -webkit-calc(90%);
-      width: calc(90%); } }
+      width: -webkit-calc(95%);
+      width: calc(95%); } }
 
 /***********
 Layout -Anything related to layout
@@ -369,17 +368,12 @@ Layout -Anything related to layout
     text-align: center; }
   .welcome-hero p, .welcome-hero h3 {
     background-color: rgba(244, 173, 85, 0.7);
-    color: #00000C;
-    text-shadow: 1px 1px 2px #F4AD55;
+    color: #014890;
+    text-shadow: 1px 1px #00000C;
     width: 90%;
-    margin: 10px auto;
+    margin: 20px auto;
     padding: 10px;
     border-radius: 25px; }
-  .welcome-hero h3 {
-    margin: 20px auto; }
-  @media screen and (min-width: 600px) {
-    .welcome-hero {
-      background-image: none; } }
 
 .choose-login, .choose-sign-up {
   display: none; }
@@ -396,31 +390,42 @@ Layout -Anything related to layout
   .login h1, .sign-up h1 {
     display: inline-block; }
   .login form, .sign-up form {
-    display: none; }
+    display: none;
+    clear: left; }
     .login form.show, .sign-up form.show {
       display: block; }
-    .login form button, .sign-up form button {
-      display: block; }
+    .login form label, .sign-up form label {
+      display: inline-block;
+      float: left;
+      clear: left;
+      width: 250px;
+      text-align: left; }
     .login form input, .sign-up form input {
-      width: 70%; }
+      display: inline-block;
+      color: #00000C;
+      float: left; }
 
 @media screen and (min-width: 700px) {
   .welcome-hero {
     background-image: url('/images/treebackground.png');
     background: cover; }
     .welcome-hero div {
-      background-color: #ddd;
       text-align: center;
       padding: 10px; }
     .welcome-hero p {
-      width: 70%;
-      margin: 0 0 0 auto; }
+      position: relative;
+      left: 100px;
+      width: 70%; }
   .choose-login, .choose-sign-up {
-    display: inline-block;
-    padding: 10px;
-    background-color: purple;
-    border: 2px solid yellow;
-    border-radius: 15px; }
+    display: inline;
+    width: -webkit-calc(25%);
+    width: calc(25%);
+    padding: 13px;
+    margin: 10px;
+    background-color: #69150D;
+    border: 2px solid #F4AD55;
+    border-radius: 15px;
+    cursor: pointer; }
   .login {
     float: left;
     -webkit-transform: translateX(-9999px);
@@ -433,20 +438,34 @@ Layout -Anything related to layout
     transform: translateX(9999px); }
   .login, .sign-up {
     box-sizing: border-box;
+    margin: 5px;
     width: -webkit-calc(50% - 10px);
     width: calc(50% - 10px);
     border-radius: 10px;
     -webkit-transition: all 1.25s ease;
     transition: all 1.25s ease; }
+    .login h1, .sign-up h1 {
+      margin: 0 auto; }
     .login.move-in, .sign-up.move-in {
       -webkit-transform: translateX(0px);
       -ms-transform: translateX(0px);
       transform: translateX(0px); }
     .login form, .sign-up form {
-      display: block; } }
+      display: block; }
+      .login form label, .sign-up form label {
+        display: inline-block;
+        float: left;
+        clear: left;
+        width: 250px;
+        text-align: left; }
+      .login form input, .sign-up form input {
+        display: inline-block;
+        color: #00000C;
+        float: left; } }
 
 header {
-  background-color: #69150D;
+  background-image: -webkit-linear-gradient(#69150D, rgba(105, 21, 13, 0.75));
+  background-image: linear-gradient(#69150D, rgba(105, 21, 13, 0.75));
   min-height: 75px;
   text-align: center; }
   header h1 {
@@ -500,9 +519,11 @@ header {
         padding: 15px; } }
 
 footer {
-  background-color: #69150D;
+  background: -webkit-linear-gradient(rgba(105, 21, 13, 0.75), #69150D);
+  background: linear-gradient(rgba(105, 21, 13, 0.75), #69150D);
   color: #ccc;
-  display: block; }
+  display: block;
+  width: 100%; }
   footer div {
     box-sizing: border-box;
     display: block;
@@ -517,8 +538,8 @@ footer {
     footer div {
       display: inline-block;
       vertical-align: top;
-      width: -webkit-calc(32%);
-      width: calc(32%); }
+      width: -webkit-calc(33% - 15px);
+      width: calc(33% - 15px); }
       footer div:nth-child(3) {
         display: inline-block; } }
 
@@ -531,10 +552,8 @@ footer {
     clear: both;
     content: "";
     display: block; }
-  .hero h1 {
+  .hero h1, .hero h4 {
     margin-top: 0; }
-  .hero h4 {
-    margin: 0 auto; }
   @media screen and (min-width: 750px) {
     .hero {
       background: -webkit-radial-gradient(rgba(181, 189, 200, 0.2) 0%, rgba(130, 140, 149, 0.4) 20%, rgba(130, 140, 149, 0.6) 40%, rgba(40, 52, 59, 0.8) 100%), url("/images/treebackground.png") no-repeat 80% 10%;
@@ -542,16 +561,12 @@ footer {
       min-height: 200px;
       position: relative; }
       .hero div {
-        background-color: rgba(244, 173, 85, 0.6);
-        padding: 3px;
-        text-shadow: 1px 1px 2px #F4AD55;
-        color: #014890;
-        text-align: center;
-        border-radius: 10px;
-        margin-left: 25px;
+        color: #fff;
+        margin: 50px;
+        margin-right: 75px;
         position: absolute;
-        top: 50px;
-        width: 60%; } }
+        text-shadow: 3px 3px 1px #69150D;
+        width: 50%; } }
 
 /***********
 Components - sections of site. 
@@ -560,21 +575,25 @@ Components - sections of site.
 Mini-Nav For Viewing Stories
 ******/
 .story-nav {
-  background-color: purple;
   display: block;
-  text-align: center;
-  box-sizing: border-box; }
+  text-align: center; }
   .story-nav a {
-    border: 3px solid pink;
+    border: 3px solid #69150D;
+    background-color: #F4AD55;
     border-radius: 10px;
     display: inline-block;
+    position: relative;
     padding: 2px 5px;
-    width: -webkit-calc(50% - 10px);
-    width: calc(50% - 10px); }
+    width: -webkit-calc(50% - 20px);
+    width: calc(50% - 20px);
+    z-index: 50; }
   @media screen and (min-width: 750px) {
     .story-nav a {
-      width: -webkit-calc(25% - 20px);
-      width: calc(25% - 20px); } }
+      -webkit-transform: translateY(-15px);
+      -ms-transform: translateY(-15px);
+      transform: translateY(-15px);
+      width: -webkit-calc(20% - 20px);
+      width: calc(20% - 20px); } }
   @media screen and (min-width: 950px) {
     .story-nav a {
       width: -webkit-calc(18% - 20px);
@@ -584,11 +603,13 @@ Mini-Nav For Viewing Stories
 Author Details
 ******/
 .author-details {
-  background-color: #888; }
-  .author-details p {
-    margin: 0; }
+  background-color: rgba(244, 173, 85, 0.6);
+  border-radius: 15px; }
+  .author-details p, .author-details a {
+    display: block;
+    margin-left: 15px; }
   .author-details a {
-    display: block; }
+    color: #014890; }
   .author-details:after {
     clear: both;
     content: "";
@@ -598,8 +619,8 @@ Author Details
   @media screen and (min-width: 700px) {
     .author-details img {
       display: inherit;
-      height: 75px;
-      width: 75px;
+      height: 65px;
+      width: 65px;
       border-radius: 50%;
       float: left; } }
 
@@ -612,15 +633,8 @@ Button Pair
 /************
 Canvas
 **************/
-.canvas-wrapper {
-  overflow: scroll;
-  border: 2px solid black;
-  text-align: center; }
-
 canvas {
-  border: 2px solid orange;
-  width: 100%;
-  overflow: scroll; }
+  width: 100%; }
 
 .story-container {
   text-align: center;
@@ -630,7 +644,6 @@ canvas {
   margin: 0 auto; }
 
 .snippet {
-  border: 1px solid #69150D;
   box-sizing: border-box;
   padding: 3px;
   margin: 5px;
@@ -647,6 +660,41 @@ canvas {
     .snippet {
       width: -webkit-calc(33.33% - 10px);
       width: calc(33.33% - 10px); } }
+
+.story {
+  position: relative;
+  padding: 15px;
+  margin: 1em 0 2em;
+  border: 5px solid #69150D;
+  color: #00000C;
+  /* css3 */
+  border-radius: 10px; }
+  .story:before {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    /* value = - border-top-width - border-bottom-width */
+    left: 40px;
+    /* controls horizontal position */
+    border-width: 20px 20px 0;
+    border-style: solid;
+    border-color: #69150D transparent;
+    /* reduce the damage in FF3.0 */
+    display: block;
+    width: 0; }
+  .story:after {
+    content: "";
+    position: absolute;
+    bottom: -13px;
+    /* value = - border-top-width - border-bottom-width */
+    left: 47px;
+    /* value = (:before left) + (:before border-left) - (:after border-left) */
+    border-width: 15px 14px 0;
+    border-style: solid;
+    border-color: #fff transparent;
+    /* reduce the damage in FF3.0 */
+    display: block;
+    width: 0; }
 
 /************
 Forms 

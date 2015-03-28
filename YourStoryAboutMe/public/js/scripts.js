@@ -6,11 +6,11 @@ $(function() {
 		var container = document.querySelector('.container');
 		var msnry = new Masonry( container, {
 		  // options
-		  columnWidth: 200,
-		  itemSelector: '.snippet',
-		  transitionDuration: '0.2',
-      position: 'relative',
-      isFitWidth: true
+		    columnWidth: 200,
+		    itemSelector: '.snippet',
+		    transitionDuration: '0.2',
+            position: 'relative',
+            isFitWidth: true
 		});
 
 		msnry.layout();
@@ -44,7 +44,7 @@ $(function() {
 	if(window.location.pathname == '/family') {
  		var sys = arbor.ParticleSystem(1000, 400, 3);
         	sys.parameters({gravity:false});
-          	sys.renderer = Renderer("#viewport");
+          sys.renderer = Renderer("#viewport");
     
         var relations;
        
@@ -69,15 +69,15 @@ $(function() {
             graphData.edges[data.person_id] = {};
 
             data.relations.forEach(function(relation){
-                console.log(typeof(relation) + "and "  + relation.first_name);
+                graphData.nodes[relation.person_id] = {
+                    color: '#014890',
+                    shape: 'dot',
+                    label: relation.first_name + " "
+                        + relation.middle_name + " " 
+                        + relation.last_name
+                }
 
-                    graphData.nodes[relation.person_id] = {
-                        color: '#014890',
-                        shape: 'dot',
-                        label: relation.first_name + " " + relation.middle_name + " " + relation.last_name
-                    }
-
-                    graphData.edges[data.person_id][relation.person_id] = {};                     
+                graphData.edges[data.person_id][relation.person_id] = {};                     
             });
             // graphData.edges.data-{style: "->"};
             sys.graft(graphData);

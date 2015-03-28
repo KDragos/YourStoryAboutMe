@@ -1,4 +1,12 @@
 @extends('layout')
+@section('section-nav')
+	<div class="story-nav">
+		<a href="/story">View Stories</a>
+		<a href="/story/create">New Story</a>
+		<a href="">Edit a Story</a>
+		<a href="">Delete a Story</a>			
+	</div>	
+@endsection
 
 @section('main-content')
 	<h1>Tell your story!</h1>

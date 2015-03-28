@@ -1,5 +1,7 @@
 header {
-	background-color: $red;
+	background-image: 
+		linear-gradient(
+			$red, transparentize($red, 0.25));
 	min-height: 75px;
 	text-align: center;
 	h1 {

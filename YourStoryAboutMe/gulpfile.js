@@ -21,6 +21,10 @@ gulp.task("sass", function(){
 	.pipe(gulp.dest("./public/css"));
 });
 
+// gulp.task('lint', function(){
+
+  
+// });
 
 gulp.task('clean', function(){
   del(['./public/build.js']);

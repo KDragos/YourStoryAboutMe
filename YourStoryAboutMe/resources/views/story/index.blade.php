@@ -1,12 +1,15 @@
 @extends('layout')
+@section('section-nav')
+	<div class="story-nav">
+		<a href="/story">View Stories</a>
+		<a href="/story/create">New Story</a>
+		<a href="">Edit a Story</a>
+		<a href="">Delete a Story</a>			
+	</div>	
+@endsection
 
 @section('main-content')
-	<div class="story-nav">
-		<a href="">Highlighted</a>
-		<a href="">Recent</a>
-		<a href="">Group By Year</a>
-		<a href="">Connect</a>			
-	</div>
+
 	<div class="story-container js-masonry">
 		@foreach ($stories as $story)
 			<div class="snippet">

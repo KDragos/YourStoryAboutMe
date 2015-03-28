@@ -20,7 +20,7 @@ class StoryController extends Controller {
 	public function index() {
 		// \Auth::user()->name;  <- How to access the logged in user's name.
 		$stories = Story::latest()->get();
-		return view('userProfile')->with('stories', $stories);
+		return view('story.index')->with('stories', $stories);
 	}
 
 	// Sends users to a form to create a new story.

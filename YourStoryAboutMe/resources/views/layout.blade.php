@@ -31,14 +31,10 @@
 {{-- 					<ul class="sub-nav">
 						<a href="/story/create">New Story</a>
 					</ul> --}}
-				<a href="/person">Search for People</a>
-					<ul class="sub-nav">
-						<a href="/person/create">New Person</a>
-					</ul>
+				<a href="/person">People</a>
+
 				<a href="/relationship">Your Family Tree</a>
-					<ul class="sub-nav">
-						<a href="/relationship/create">New Connection</a>
-					</ul>
+
 			</nav>	
 		</header>
 	@show
@@ -50,7 +46,11 @@
 				<h4>“In creative nonfiction, we are writing “truth” ... and yet in telling the same story, several people might each remember a different “truth”.”</h4>
 			</div>
 		</section>
+		
+		@yield('section-nav')	
+	
 	@show
+
 
 	{{-- Main Content --}}
 	<main>
@@ -63,7 +63,8 @@
 		<footer>
 			<div>
 				<h2>About</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga corrupti recusandae fugit impedit non id, a nam ab quidem molestias maiores earum iusto nulla, officiis ipsa sapiente. Maiores, amet doloremque.</p>
+					<p>As the years pass, our memories begin to fade and those stories become lost. Finally, there's a place to share those stories!
+					Your Story About Me is a place where you can share stories and memories of loved ones. Keep in mind, when reading these stories that each story is written by a real person and their "truth" may not be the exact same memory as you remember it.</p>
 			</div>
 			<div>
 				<h2>Blog</h2>

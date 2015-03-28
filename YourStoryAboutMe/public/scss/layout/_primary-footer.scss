@@ -1,7 +1,9 @@
 footer {
-	background-color: $red;
+	background: 
+		linear-gradient(transparentize($red, 0.25), $red);
 	color: #ccc;
 	display:block;
+	width: 100%;
 	div {
 		box-sizing: border-box;
 		display: block;
@@ -19,7 +21,7 @@ footer {
 		div {
 			display: inline-block;
 			vertical-align: top;
-			width: calc(32%);
+			width: calc(33% - 15px);
 			&:nth-child(3) {
 				display:inline-block;
 			}

@@ -1,24 +1,25 @@
 /******
 Mini-Nav For Viewing Stories
 ******/
-
-
 .story-nav {
-	background-color:purple;	
+	// background-color:black;	
 	display: block;
 	text-align: center;
-	box-sizing: border-box;
 	a {
-		border: 3px solid pink;
+		border: 3px solid $red;
+		background-color: $tan;
 		border-radius: 10px;
 		display:inline-block;
+		position: relative;
 		padding: 2px 5px;
-		width: calc(50% - 10px);
+		width: calc(50% - 20px);
+		z-index: 50;
 	}
 
 	@media screen and (min-width: 750px) {
 		a {
-			width: calc(25% - 20px);
+			transform: translateY( -15px );
+			width: calc(20% - 20px);
 		}
 	}
 
@@ -34,12 +35,17 @@ Author Details
 ******/
 
 .author-details {
-	background-color: #888;
-	p{
-		margin: 0;
+	background-color: transparentize($tan, 0.4);
+	border-radius: 15px;
+	p {
+
+	}
+	p, a {
+		display:block;
+		margin-left: 15px;
 	}
 	a {
-		display:block;
+		color: $blue;
 	}
 	&:after {
 	   clear: both;
@@ -52,8 +58,8 @@ Author Details
 	@media screen and (min-width: 700px) {
 		img {
 			display:inherit;
-			height: 75px;
-			width: 75px;
+			height: 65px;
+			width: 65px;
 			border-radius: 50%;
 			float:left;
 		}	
@@ -71,15 +77,8 @@ Button Pair
 /************
 Canvas
 **************/
-.canvas-wrapper {
-	overflow:scroll;
-	border: 2px solid black;
-	text-align: center;
-}
 canvas {
-	border: 2px solid orange;
 	width: 100%;
-	overflow: scroll;
 }
 
 
