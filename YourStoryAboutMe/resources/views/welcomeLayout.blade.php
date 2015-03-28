@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 	<title>Your Story About Me</title>
 	<link rel="stylesheet" href="<?php echo asset('css/styles.css')?>">
 	<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
@@ -47,8 +48,7 @@
 			<div>
 				{!! Form::open(['url' => '/auth/register']) !!}
 					@include('auth._signUpForm', ['submitButtonText' => "Sign Up"])
-				{!! Form::close() !!}	
-				
+				{!! Form::close() !!}
 			</div>
 		</div>
 	</section>

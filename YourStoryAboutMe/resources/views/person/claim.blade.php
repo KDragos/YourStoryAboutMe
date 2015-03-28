@@ -1,5 +1,14 @@
 @extends("layout")
 
+@section('section-nav')
+	<div class="story-nav">
+		<a href="/person">People</a>
+		<a href="/person/create">New Person</a>
+		<a href="">Edit a Person</a>
+		<a href="">Delete a Person</a>			
+	</div>	
+@endsection
+
 @section('main-content')
 <div>
 	<p>When signing up for Your Story About Me, you created a user account. To enjoy the fullest functionality of our site, including creating your family tree, you'll have to claim a person. You can only claim one person. By claiming your person in our system, you can monitor stories being told about you.</p>

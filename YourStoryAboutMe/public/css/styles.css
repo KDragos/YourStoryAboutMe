@@ -355,7 +355,7 @@ Layout -Anything related to layout
 **********/
 .welcome-hero {
   margin: 0;
-  background: url('/images/treebackground.png') no-repeat;
+  background: url('/images/treebackground2.png') no-repeat;
   background-size: cover;
   background-position: absolute;
   overflow: hidden;
@@ -379,31 +379,28 @@ Layout -Anything related to layout
   display: none; }
 
 .login, .sign-up {
-  background-color: #69150D;
+  background: -webkit-linear-gradient(top, #91342B, #69150D);
+  background: linear-gradient(to bottom, #91342B, #69150D);
   color: #F4AD55;
   border: 3px solid #014890;
   border-radius: 25px;
   display: block;
   margin: 0 auto;
+  padding: 5px;
   text-align: center;
   width: 90%; }
   .login h1, .sign-up h1 {
     display: inline-block; }
   .login form, .sign-up form {
-    display: none;
-    clear: left; }
-    .login form.show, .sign-up form.show {
-      display: block; }
+    display: none; }
     .login form label, .sign-up form label {
-      display: inline-block;
       float: left;
-      clear: left;
       width: 250px;
       text-align: left; }
     .login form input, .sign-up form input {
-      display: inline-block;
-      color: #00000C;
-      float: left; }
+      color: #00000C; }
+    .login form.show, .sign-up form.show {
+      display: block; }
 
 @media screen and (min-width: 700px) {
   .welcome-hero {
@@ -422,7 +419,8 @@ Layout -Anything related to layout
     width: calc(25%);
     padding: 13px;
     margin: 10px;
-    background-color: #69150D;
+    background: -webkit-linear-gradient(top, #91342B, #69150D);
+    background: linear-gradient(to bottom, #91342B, #69150D);
     border: 2px solid #F4AD55;
     border-radius: 15px;
     cursor: pointer; }
@@ -438,7 +436,7 @@ Layout -Anything related to layout
     transform: translateX(9999px); }
   .login, .sign-up {
     box-sizing: border-box;
-    margin: 5px;
+    margin: 15px auto;
     width: -webkit-calc(50% - 10px);
     width: calc(50% - 10px);
     border-radius: 10px;
@@ -556,7 +554,7 @@ footer {
     margin-top: 0; }
   @media screen and (min-width: 750px) {
     .hero {
-      background: -webkit-radial-gradient(rgba(181, 189, 200, 0.2) 0%, rgba(130, 140, 149, 0.4) 20%, rgba(130, 140, 149, 0.6) 40%, rgba(40, 52, 59, 0.8) 100%), url("/images/treebackground.png") no-repeat 80% 10%;
+      background: -webkit-radial-gradient(rgba(181, 189, 200, 0.3) 0%, rgba(130, 140, 149, 0.5) 20%, rgba(130, 140, 149, 0.6) 40%, rgba(40, 52, 59, 0.8) 100%), url("/images/treebackground2.png") no-repeat 80% 10%;
       background-size: cover;
       min-height: 200px;
       position: relative; }

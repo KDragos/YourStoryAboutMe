@@ -20,12 +20,12 @@ $(function() {
 
 	// Welcome page layout js.
       // Mobile js.
-    $(".login").on("click", function(){
-        $(this).find('form').toggleClass("show");
+    $(".login").on("click", "h1", function(){
+        $(".login").find('form').toggleClass("show");
         $('.sign-up form').removeClass("show");
     });
-    $(".sign-up").on("click", function(){
-        $(this).find('form').toggleClass("show");
+    $(".sign-up").on("click", "h1", function(){
+        $(".sign-up").find('form').toggleClass("show");
         $('.login form').removeClass("show");
     });
 

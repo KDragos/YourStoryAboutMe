@@ -1,5 +1,14 @@
 @extends('layout')
 
+@section('section-nav')
+	<div class="story-nav">
+		<a href="/person">People</a>
+		<a href="/person/create">New Person</a>
+		<a href="">Edit a Person</a>
+		<a href="">Delete a Person</a>			
+	</div>	
+@endsection
+
 @section('main-content')
 	<h1>
 		{{ $person->first_name}} {{$person->middle_name}} {{$person->last_name}} {{$person->suffix}}

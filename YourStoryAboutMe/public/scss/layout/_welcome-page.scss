@@ -1,6 +1,6 @@
 .welcome-hero {
 	margin: 0;
-	background: url('/images/treebackground.png') no-repeat;
+	background: url('/images/treebackground2.png') no-repeat;
 	background-size: cover;
 	background-position: absolute;
 	overflow:hidden;
@@ -30,12 +30,14 @@
 }
 
 .login, .sign-up {
-	background-color:$red;
+	background: linear-gradient(to bottom, #91342B, $red);
+	// background-color:$red;
 	color: $tan;
 	border: 3px solid $blue;
 	border-radius: 25px;
 	display: block;
 	margin: 0 auto;
+	padding: 5px;
 	text-align: center;
 	width: 90%;
 	h1 {
@@ -43,22 +45,20 @@
 	}
 	form {
 		display:none;
-		&.show {
-			display:block;
-		}
 		label{
-		    display: inline-block;
 		    float: left;
-		    clear: left;
 		    width: 250px;
 		    text-align: left;
 		}
 		input {
-		  display: inline-block;
-		  color: $black;
-		  float: left;
+			color: $black;
+		}
+		&.show {
+			display:block;
+		
 		}
 	}
+
 }
 
 @media screen and (min-width: 700px) {
@@ -81,7 +81,9 @@
 		width: calc(25%);
 		padding: 13px;
 		margin: 10px;
-		background-color: $red;
+		// background-color: $red;
+
+	background: linear-gradient(to bottom, #91342B, $red);
 		border: 2px solid $tan;
 		border-radius: 15px;
 		cursor: pointer;
@@ -97,7 +99,7 @@
 	}
 	.login, .sign-up {
 		box-sizing:border-box;
-		margin: 5px;
+		margin: 15px auto;
 		width: calc(50% - 10px);
 		border-radius: 10px;
 		transition: all 1.25s ease;
