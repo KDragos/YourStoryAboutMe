@@ -27,4 +27,13 @@ class Challenge extends Model {
 	 */
 	protected $hidden = ['story_id', 'created_by', 'challenge_id'];
 
+	public function challenged() {
+    	return $this->belongsTo('App\Story');
+    }
+
+    public function characters() {
+    	return $this->hasManyThrough('App\Person', "App\Story");
+    }
+
+
 }

@@ -25,42 +25,16 @@ class RelationshipController extends Controller {
 
 	public function create() {
 		// Get all people from the database. This will populate the dropdowns.
-		$person = Person::orderBy('last_name')->get();
-
-		return view('relationship.create')->with('people', $person);
+		$something = new Person;
+		$person = $something->getPersonList();
+		return view('relationship.create', compact('person'));
 	}
 
 	// Stores the relationship's data in the database.
 	public function store(RelationshipRequest $request) {
 		$input = Request::Except('_token');
-		
-		$first = explode(" ", $input['person_id1']);
-		$person1 = Person::where(
-			'first_name', '=', $first[0])
-			->where('middle_name', '=', $first[1])
-			->where('last_name', '=', $first[2])->get()->toArray();
-		
-		$second = explode(" ", $input['person_id2']);
-		$person2 = Person::where(
-			'first_name', '=', $second[0])
-			->where('middle_name', '=', $second[1])
-			->where('last_name', '=', $second[2])->get()->toArray();
-
-		$relationship = [];
-		$relationship['person_id1'] = $person1[0]['person_id'];
-		$relationship['person_id2'] = $person2[0]['person_id'];
-		$relationship['relationship'] = $input['relationship'];
-
-		// dd($relationship);
-		
-		Relationship::create([
-			'person_id1' => $relationship['person_id1'],
-			'person_id2' => $relationship['person_id2'],
-			'relationship' => $relationship['relationship'],
-			'created_at' => Carbon::now(),
-			'updated_at' => Carbon::now()
-			]);
-		
+		Relationship::create($input);
+				
 		return redirect('relationship');
 	}
 

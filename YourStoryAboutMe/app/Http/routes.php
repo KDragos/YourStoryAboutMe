@@ -42,6 +42,7 @@ Route::get('welcome', function (){
 Route::resource('story', 'StoryController');
 Route::resource('relationship', 'RelationshipController');
 Route::resource('person', 'PersonController');
+Route::resource('challenge', 'ChallengeController');
 
 // Routes to claim a person. 
 Route::get('person/{id}/claim', 'PersonController@claim');
@@ -51,4 +52,7 @@ Route::get('family', function(){
 	return view('family');
 });
 
+Route::get('api/relations/{id}', 'APIController@getAllRels');
+Route::get('api/chars/{id}', 'APIController@getCharacters');
+Route::get('api/author/{id}', 'APIController@getAuthor');
 Route::get('api/{id}', 'APIController@show');

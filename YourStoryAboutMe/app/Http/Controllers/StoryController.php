@@ -25,24 +25,18 @@ class StoryController extends Controller {
 
 	// Sends users to a form to create a new story.
 	public function create() {
-		$person = Person::orderBy('last_name')->get();
-
+		$something = new Person;
+		$person = $something->getPersonList();
 		return view('story.create', compact('person'));
 	}
 	
 
 	// Validates we have the appropriate information and stores the data in the database.
 	public function store(StoryRequest $request) {
-
-		// ToDo: fix this to prevent an error.
-		$input = Request::Except('_token');
+		$input = Request::Except('_token', 'secondary_characters');
 		$input['created_by'] = \Auth::id();
-		$input['created_at'] = Carbon::now();
-		$input['updated_at'] = Carbon::now();
-		$story = new Story($input);
-		Story::create($input);
-		// \Auth::user()->stories()->save($story);
-		dd($input);
+		$story = Story::create($input);
+
 		
 		return redirect('story');
 	}
@@ -64,9 +58,9 @@ class StoryController extends Controller {
 	public function update(Story $story, StoryRequest $request) {
 		// This is accessed via a patch request.
 		$input = Request::Except('_method', '_token');
-		$input['updated_at'] = Carbon::now();
+		// $input['updated_at'] = Carbon::now();
 		
-		$story->update($input);
+		$story->update($input)->withTimestamps();
 		return redirect('story');
 	}
 

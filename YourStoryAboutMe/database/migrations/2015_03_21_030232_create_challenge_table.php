@@ -34,7 +34,7 @@ class CreateChallengeTable extends Migration {
 	 * @return void
 	 */
 	public function down() {
-		Schema::dropIfExists('challenge');
+		Schema::drop('challenge');
 	}
 
 }

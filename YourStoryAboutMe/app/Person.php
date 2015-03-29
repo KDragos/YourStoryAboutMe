@@ -24,13 +24,26 @@ class Person extends Model {
 
 	protected $guarded = ['person_id'];
 
+	public function getPersonList() {
+		$allPeople = $this->all();
+		$personList = [];
+		foreach($allPeople as $person) {
+			// echo $person->first_name . "something" ;
+
+			$wholeName = $person->first_name . " " . $person->middle_name . " " . $person->last_name;
+			// $person_id = $person['person_id'];
+			$personList[$person->person_id] = $wholeName;
+		}
+		return $personList;
+	}
+
 
 	public function owner() {
     	return $this->hasOne('App\User');
     }
 	
 	public function stories() {
-    	return $this->hasMany('App\Story');
+    	return $this->belongsToMany('App\Story');
     }
 
 	public function relatives() {

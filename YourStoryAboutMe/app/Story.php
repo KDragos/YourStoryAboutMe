@@ -28,7 +28,7 @@ class Story extends Model {
 	 *
 	 * @var array
 	 */
-	protected $dates = ["published_at", "updated_at", "created_at", 'created_by'];
+	protected $dates = ["published_at", "updated_at", "created_at"];
 
 
 
@@ -44,20 +44,23 @@ class Story extends Model {
 	 *
 	 * 
 	 */
-	// A story is created by one user.
-	public function created_by() {
-        return $this->hasOneOrMany('App\User');
-    }
 
 
-    // A story is written by one user.
-    // Can be accessed by $story->author
+	/**
+	 * Get the user who created the story.
+	 * 
+	 */
+    // Can be accessed by $story->author()
     public function author() {
     	return $this->belongsTo('App\User');
     }
 
-    // A story can be written about more than one person.
-    // Can be accessed by $story->characters
+
+    /**
+	 * Get the persons who are characters in the story.
+	 * 
+	 */
+    // Can be accessed by $story->characters()
     public function characters() {
     	return $this->hasMany('App\Person');
     }

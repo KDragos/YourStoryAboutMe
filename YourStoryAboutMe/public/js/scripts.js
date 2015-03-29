@@ -6,17 +6,15 @@ $(function() {
 		var container = document.querySelector('.container');
 		var msnry = new Masonry( container, {
 		  // options
-		    columnWidth: 200,
-		    itemSelector: '.snippet',
-		    transitionDuration: '0.2',
-            position: 'relative',
-            isFitWidth: true
+		    columnWidth: 75,
+            isFitWidth: true,
+		    itemSelector: '.snippet'
+		    // transitionDuration: '0.1',
+            // position: 'relative'
 		});
 
 		msnry.layout();
-		
 	}
-	
 
 	// Welcome page layout js.
       // Mobile js.
@@ -40,10 +38,13 @@ $(function() {
 		$('.login').removeClass("move-in");
 	});
 
+
+
+
 	// Family Tree
 	if(window.location.pathname == '/family') {
- 		var sys = arbor.ParticleSystem(1000, 400, 3);
-        	sys.parameters({gravity:false});
+ 		var sys = arbor.ParticleSystem(1000, 400, 1);
+        	sys.parameters({gravity:true, stiffness:900, repulsion:5000});
           sys.renderer = Renderer("#viewport");
     
         var relations;
@@ -55,35 +56,62 @@ $(function() {
             }
         }
 
-        // need a placeholder for 1. 
-        $.get('api/1').success(function(data){
-            relations = data;
-
-          
-            graphData.nodes[data.person_id] = {
-                color: "#014890",
-                shape: "dot",
-                label: data.first_name + " " + data.middle_name + " " + data.last_name
+        var populateRelations = function(person, depth) {
+            graphData.nodes[person.person_id] = {
+            color: "#014890",
+            shape: "dot",
+            label: person.first_name + " " 
+                   + person.middle_name + " "
+                   + person.last_name
             };
 
-            graphData.edges[data.person_id] = {};
-
-            data.relations.forEach(function(relation){
-                graphData.nodes[relation.person_id] = {
-                    color: '#014890',
-                    shape: 'dot',
-                    label: relation.first_name + " "
-                        + relation.middle_name + " " 
-                        + relation.last_name
+            graphData.edges[person.person_id] = {};
+            // console.log(person);
+            if(!person.relations){
+                return;
+            }
+            person.relations.forEach(function(relation){
+                // if(relation instanceof Array) return;
+                // console.log(relation);
+                if(!relation) {
+                    return;
                 }
+                if(depth < 5){
+                    populateRelations(relation, (depth + 1));
+                }
+                graphData.edges[person.person_id][relation.person_id] = {};
+            });  
+        }
+        // need a placeholder for 1. 
+        $.get('api/1').success(function(data){
+            // populateRelations(data, 0);
+            populateRelations(data, 0);
+            // populateRelations(data);
+            // graphData.nodes[data.person_id] = {
+            //     color: "#014890",
+            //     shape: "dot",
+            //     label: data.first_name + " " + data.middle_name + " " + data.last_name
+            // };
 
-                graphData.edges[data.person_id][relation.person_id] = {};                     
-            });
+            // graphData.edges[data.person_id] = {};
+
+            // data.relations.forEach(function(relation){
+            //     graphData.nodes[relation.person_id] = {
+            //         color: '#014890',
+            //         shape: 'dot',
+            //         label: relation.first_name + " "
+            //             + relation.middle_name + " " 
+            //             + relation.last_name
+            //     }
+
+            //     graphData.edges[data.person_id][relation.person_id] = {};                     
+            // });
             // graphData.edges.data-{style: "->"};
+            // console.log(graphData);
             sys.graft(graphData);
 
 
-
+   
             // console.log('made it this far.');
         });
               // var data = {
@@ -124,9 +152,5 @@ $(function() {
           // var family = some information that comes back from the database!
 	}
 
-
-
-
 });
-
 

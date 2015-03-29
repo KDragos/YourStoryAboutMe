@@ -1,30 +1,18 @@
 <div class="form-group">
-	<label for="person_id1">Person One: </label>
-	<input list="people" name="person_id1" required>
-	<datalist id="people">
-		@foreach($people as $person) 
-			<option value="{{$person->first_name}} {{$person->middle_name}} {{$person->last_name}}">{{$person->first_name}} {{$person->middle_name}} {{$person->last_name}} </option>	
-		@endforeach
-	</datalist>
-</div>	
-<div class="form-group">
-	<label for="relationship">is the </label>
-	<select name="relationship">
-		<option value="parent">Parent</option>
-		<option value="spouse">Spouse</option>
-		<option value="child">Child</option>
-	</select>
-	<label> of </label>
+	{!! Form::label('person_id1', 'Person One:') !!}
+	{!! Form::select('person_id1', $person, null, ['class' => 'form-control', 'required']) !!}
 </div>
 <div class="form-group">
-	<label for="person_id2">Person Two: </label>
-	<input list="people" name="person_id2" required>
-	<datalist id="people">
-		@foreach($people as $person) 
-			<option value="{{$person->first_name}} {{$person->middle_name}} {{$person->last_name}}"> {{$person->first_name}} {{$person->middle_name}} {{$person->last_name}} </option>	
-		@endforeach
-	</datalist>
+	{!! Form::label('relationship', 'is the ') !!}
+	{!! Form::select('relationship', ['parent' => 'parent',
+	 								  'child'  => 'child',
+	 								  'spouse' => 'spouse'],
+	 				null, ['class' => 'form-control', 'required']) !!}
 </div>	
+<div class="form-group">
+	{!! Form::label('person_id2', 'of Person Two:') !!}
+	{!! Form::select('person_id2', $person, null, ['class' => 'form-control', 'required']) !!}
+</div>		
 <div class="form-group">
 	{!! Form::submit($submitButtonText, ['class' => 'btn btn-primary form-control']) !!}
 </div>

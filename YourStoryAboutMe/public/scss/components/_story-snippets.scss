@@ -11,7 +11,7 @@
 
 	// border: 1px solid $red;
 	box-sizing: border-box;
-	padding: 3px;
+	padding: 5px;
 	margin: 5px;
 	text-align: left;
 	width: calc(100% - 20px);
@@ -20,12 +20,12 @@
 		padding: 3px;
 	}
 
-	@media screen and (min-width: 700px) {
-		width: calc(50% - 15px);
+	@media screen and (min-width: 650px) {
+		width: calc(45% - 15px);
 	}
 
 	@media screen and (min-width: 950px) {
-		width: calc(33.33% - 10px);
+		width: calc(32% - 10px);
 	}
 
 }

@@ -4,7 +4,7 @@
 	<div class="story-nav">
 		<a href="/person">People</a>
 		<a href="/person/create">New Person</a>
-		<a href="">Edit a Person</a>
+		<a href="">Edit a Person</a>  
 		<a href="">Delete a Person</a>			
 	</div>	
 @endsection
@@ -12,6 +12,10 @@
 @section('main-content')
 <h1>All people!</h1>
 <div>
+	@if (Session::has('flash_message'))
+		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+		<div class="alert alert-success">{{ Session::get('flash_message') }}</div>
+	@endif
 {!! Form::open(['url' => 'person']) !!}
 	<input list="people" name="people">
 	<datalist id="people">
@@ -38,7 +42,7 @@
 			<div class="options">
 				<a href="person/{{$individual->person_id}}">Read Stories</a>
 				<a href="{{ action('PersonController@edit', [$individual->person_id]) }}">Update</a>
-				<a href="">Connect</a>
+				<a href="/relationship/create">Connect</a>
 			</div>
 		</div>
 	@endforeach

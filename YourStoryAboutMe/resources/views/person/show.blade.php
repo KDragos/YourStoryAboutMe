@@ -22,5 +22,6 @@
 		{{-- <div> Stories where this person is either a primary or secondary
 					 character will be put here. These will be displayed using
 					 masonry.  </div> --}}
+		<p> This is where stories about this person would go. This will allow users to read stories about other people they're connected with or searching for.</p>
 	</div>
 @stop

@@ -4,6 +4,9 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use DB;
 use Illuminate\Http\Request;
+use App\Relationship;
+use App\Story;
+use App\Person;
 
 class APIController extends Controller {
 
@@ -114,5 +117,23 @@ class APIController extends Controller {
 	{
 		//
 	}
+
+	public function getAllRels($id) {
+		$start = Person::findOrFail($id);
+		dd($start->relatives());
+		return $start->relatives();
+	}
+
+	public function getCharacters($id) {
+		$start = Story::findOrFail($id);
+		dd($start->characters());
+	}
+
+	public function getAuthor($id) {
+		$start = Story::findOrFail($id);
+		dd($start->author());
+	}
+
+
 
 }

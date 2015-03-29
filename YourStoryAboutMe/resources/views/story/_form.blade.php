@@ -1,24 +1,20 @@
 {{-- Main form --}}
 <div class="form-group">
-	{!! Form::label('main_character', 'Main Character:') !!}		
-	<select name="main_character">
+	{!! Form::label('main_character', 'Main Character:') !!}
+	{!! Form::select('main_character', $person, null, ['class' => 'form-control']) !!}
+		
+{{-- 	<select name="main_character">
 		@foreach($person as $individual) 
 			<option value="{{$individual->person_id}}"> {{$individual->first_name}} {{$individual->middle_name}} {{$individual->last_name}} </option>	
 		@endforeach
-	</select>
+	</select> --}}
 {{-- 	{!! Form::text('main_character', null, ['class' => 'form-control']) !!}	
- --}}</div>
+ {{-- --}}</div> 
 
 <div class="form-group">
-	{!! Form::label('secondary_characters', 'Secondary Characters:') !!}
-	<select name="secondary_characters">
-		<option value="null"> </option>
-		@foreach($person as $individual) 
-			<option value="{{$individual->person_id}}"> {{$individual->first_name}} {{$individual->middle_name}} {{$individual->last_name}} </option>	
-		@endforeach
-	</select>
-{{-- 	{!! Form::text('secondary_characters', null, ['class' => 'form-control']) !!}	
- --}}</div>
+	{!! Form::label('secondary_characters', 'Secondary Characters:  (Use control or command to selet more than one)') !!}
+	{!! Form::select('secondary_characters[]', $person, null, ['id' => 'secondary_characters', 'class' => 'form-control', 'multiple']) !!}
+</div>
 
 <div class="form-group">
 	{!! Form::label('story_text', 'Story:') !!}
@@ -33,3 +29,10 @@
 <div class="form-group">
 	{!! Form::submit($submitButtonText, ['class' => 'btn btn-primary form-control']) !!}
 </div>
+
+@section('footer')
+<script>
+	// $("#secondary_characters").select2();
+	$(".secondary_characters").select2();
+</script>
+@endsection

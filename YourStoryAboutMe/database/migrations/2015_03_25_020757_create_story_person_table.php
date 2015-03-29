@@ -23,6 +23,16 @@ class CreateStoryPersonTable extends Migration {
 				  ->onUpdate('cascade')->onDelete('cascade');
 			$table->timestamps();
 		});
+
+	// Schema::create('story_person', function(Blueprint $table) {
+	// 	$table->primary(['story_id', 'person_id']);
+	// 	$table->integer('story_id')->unsigned();
+	// 	$table->foreign('story_id')->references('story_id')->on('story')->onDelete('cascade');
+
+	// 	$table->integer('person_id')->unsigned();
+	// 	$table->foreign('person_id')->references('person_id')->on('story')->onDelete('cascade');
+	// });
+	
 	}
 
 	/**
@@ -31,10 +41,9 @@ class CreateStoryPersonTable extends Migration {
 	 * @return void
 	 */
 	public function down() {
-		Schema::table('story_person', function(Blueprint $table) {
-			Schema::dropIfExists('story_person');
+		Schema::dropIfExists('story_person');
 
-		});
 	}
-
 }
+
+

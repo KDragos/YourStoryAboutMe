@@ -18,7 +18,6 @@ class CreateStoryTable extends Migration {
 				  ->onUpdate('cascade')->onDelete('cascade');;
 			$table->longText('story_text');
 			$table->string('main_character');
-			$table->string('secondary_characters');
 			$table->date('published_at');
 			$table->timestamps();		
 		});
