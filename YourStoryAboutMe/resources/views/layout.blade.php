@@ -7,14 +7,14 @@
 	<link rel="stylesheet" href="<?php echo asset('css/chosen.css')?>">
 	<link rel="stylesheet" href="<?php echo asset('css/styles.css')?>">
 	<link href='http://fonts.googleapis.com/css?family=Playball|Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>
-	<link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/css/select2.min.css" rel="stylesheet" />
+	<link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/css/select2.css" rel="stylesheet" />
 	<script src="/bower_components/jquery/dist/jquery.js"> </script>
 	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.min.js"></script>
 	<script src="/js/arbor/lib/arbor.js"> </script>
 	<script src="/js/arbor/lib/arbor-tween.js"> </script>
 	<script src="/js/arbor/demos/halfviz/src/renderer.js"> </script>
 	<script src="/js/arbor/demos/_/graphics.js"> </script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.js"></script>
 
 
 </head>

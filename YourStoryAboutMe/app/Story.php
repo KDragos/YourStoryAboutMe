@@ -19,10 +19,9 @@ class Story extends Model {
 	 *
 	 * @var array
 	 */
-	protected $fillable = [ 'created_by',
-			 'story_text', 'main_character',
-			 'secondary_characters', 'published_at',
-			 "created_at", "updated_at"];
+	protected $fillable = [ 'created_by','story_text',
+							'main_character', 'published_at',
+			 				'created_at', 'updated_at'];
 	/**
 	 * The attributes using Carbon.
 	 *
@@ -55,7 +54,9 @@ class Story extends Model {
     	return $this->belongsTo('App\User');
     }
 
-
+    public function getCharacters() {
+    	return $this->hasMany('App\StoryPerson');
+    }
     /**
 	 * Get the persons who are characters in the story.
 	 * 

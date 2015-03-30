@@ -40,11 +40,11 @@ gulp.task('scripts', ['clean'], function() {
   './bower_components/chosen_v1.4.1/chosen.jquery.js',
   './node_modules/masonry-layout/dist/masonry.pkgd.js',
   '//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js',
-  '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.min.js',
-  // '.public/js/arbor/build/tmpl/arbor-graphics.js',
-  // '.public/js/arbor/demos/halfvis/renderer.js',
-  // '.public/js/arbor/lib/arbor.js',
-  // '.public/js/arbor/lib/arbor-tween.js',
+  '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.js',
+  './public/js/arbor/build/tmpl/arbor-graphics.js',
+  './public/js/arbor/demos/halfvis/renderer.js',
+  './public/js/arbor/lib/arbor.js',
+  './public/js/arbor/lib/arbor-tween.js',
   './public/js/*.js'
   ])  // Edit the place where we've put our js files. 
     .pipe(concat('build.js')) // This is going to be the file name.

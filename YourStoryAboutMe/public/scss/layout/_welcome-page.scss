@@ -1,26 +1,25 @@
 .welcome-hero {
-	margin: 0;
 	background: url('/images/treebackground2.png') no-repeat;
-	background-size: cover;
 	background-position: absolute;
+	background-size: cover;
+	margin: 0;
 	overflow:hidden;
 	padding: 5px;
 	h1 {
-		font-family: $secondary-font, cursive;
-		text-shadow: 2px 2px 2px $blue;
 		color: #fff;
-		width: 80%;
+		font-family: $secondary-font, cursive;
 		text-align: center;
+		text-shadow: 2px 2px 2px $blue;
+		width: 80%;
 	}
 	p, h3 {
-		background-color: transparentize($tan, 0.3);
-		color: $blue;
-		// text-shadow: 1px 1px 1px $black;
-		text-shadow: 1px 1px $black;
-		width: 90%;
+		background-color: transparentize($black, 0.6);
+		border-radius: 25px;
+		color: $tan;
 		margin: 20px auto;
 		padding: 10px;
-		border-radius: 25px;
+		text-shadow: 1px 1px $blue;
+		width: 90%;
 	}
 
 }
@@ -31,10 +30,8 @@
 
 .login, .sign-up {
 	background: linear-gradient(to bottom, #91342B, $red);
-	// background-color:$red;
-	color: $tan;
-	border: 3px solid $blue;
 	border-radius: 25px;
+	color: $tan;
 	display: block;
 	margin: 0 auto;
 	padding: 5px;
@@ -47,8 +44,8 @@
 		display:none;
 		label{
 		    float: left;
-		    width: 250px;
 		    text-align: left;
+		    width: 250px;
 		}
 		input {
 			color: $black;
@@ -65,28 +62,20 @@
 	.welcome-hero {
 		background-image: url('/images/treebackground.png');
 		background: cover; 
+		position:absolute;
 		div {
-			text-align: center;
 			padding: 10px;
+			text-align: center;
 		}
-		p {
-			position: relative;
-			left: 100px;
-			width: 70%;
-		}
-
 	}
 	.choose-login, .choose-sign-up {
-		display:inline;
-		width: calc(25%);
-		padding: 13px;
-		margin: 10px;
-		// background-color: $red;
-
-	background: linear-gradient(to bottom, #91342B, $red);
-		border: 2px solid $tan;
+		background: linear-gradient(to bottom, #91342B, $red);
 		border-radius: 15px;
 		cursor: pointer;
+		display:inline;
+		margin: 10px;
+		padding: 13px;
+		width: calc(25%);
 
 	}
 	.login {
@@ -98,11 +87,11 @@
 		transform: translateX(9999px);
 	}
 	.login, .sign-up {
+		border-radius: 10px;
 		box-sizing:border-box;
 		margin: 15px auto;
-		width: calc(50% - 10px);
-		border-radius: 10px;
 		transition: all 1.25s ease;
+		width: calc(50% - 10px);
 		h1 {
 			margin: 0 auto;
 		}
@@ -112,15 +101,15 @@
 		form {
 			display:block;
 			label{
+			    clear: left;
 			    display: inline-block;
 			    float: left;
-			    clear: left;
-			    width: 250px;
 			    text-align: left;
+			    width: 250px;
 			}
 			input {
-			  display: inline-block;
 			  color: $black;
+			  display: inline-block;
 			  float: left;
 			}
 		}	

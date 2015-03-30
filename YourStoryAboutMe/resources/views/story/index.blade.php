@@ -17,7 +17,7 @@
 				<div class="author-details">
 					<img src="images/logotree.png" alt="">
 					<a href="{{ action('StoryController@show', [$story->story_id]) }}">More...</a>
-					<a href="">{{ $story->created_by }}</a>
+					<a href="{{ action('PersonController@show', [$story->created_by]) }}" >{{ $story->author }}</a>
 					<p>{{ $story->published_at }}</p>				
 				</div>
 			</div>

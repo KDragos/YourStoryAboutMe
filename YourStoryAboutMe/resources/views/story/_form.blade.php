@@ -2,14 +2,7 @@
 <div class="form-group">
 	{!! Form::label('main_character', 'Main Character:') !!}
 	{!! Form::select('main_character', $person, null, ['class' => 'form-control']) !!}
-		
-{{-- 	<select name="main_character">
-		@foreach($person as $individual) 
-			<option value="{{$individual->person_id}}"> {{$individual->first_name}} {{$individual->middle_name}} {{$individual->last_name}} </option>	
-		@endforeach
-	</select> --}}
-{{-- 	{!! Form::text('main_character', null, ['class' => 'form-control']) !!}	
- {{-- --}}</div> 
+</div> 
 
 <div class="form-group">
 	{!! Form::label('secondary_characters', 'Secondary Characters:  (Use control or command to selet more than one)') !!}
@@ -33,6 +26,6 @@
 @section('footer')
 <script>
 	// $("#secondary_characters").select2();
-	$(".secondary_characters").select2();
+	$("#secondary_characters").select2();
 </script>
 @endsection
