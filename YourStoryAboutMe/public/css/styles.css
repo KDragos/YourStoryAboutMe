@@ -671,26 +671,25 @@ canvas {
   border-radius: 10px; }
   .story:before {
     content: "";
-    position: absolute;
+    border-width: 20px 20px 0;
     bottom: -20px;
     /* value = - border-top-width - border-bottom-width */
+    display: block;
     left: 40px;
     /* controls horizontal position */
-    border-width: 20px 20px 0;
-    display: block;
+    position: absolute;
     width: 0; }
   .story:after {
-    content: "";
-    position: absolute;
+    border-color: #69150D transparent;
+    border-style: solid;
+    border-width: 15px 14px 0;
     bottom: -13px;
     /* value = - border-top-width - border-bottom-width */
+    content: "";
+    display: block;
     left: 47px;
     /* value = (:before left) + (:before border-left) - (:after border-left) */
-    border-width: 15px 14px 0;
-    border-style: solid;
-    border-color: #69150D transparent;
-    /* reduce the damage in FF3.0 */
-    display: block;
+    position: absolute;
     width: 0; }
 
 /************
