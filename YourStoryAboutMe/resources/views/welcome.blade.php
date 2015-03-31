@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<title>Laravel</title>
-		<link href='http://fonts.googleapis.com/css?family=Playball|Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Playball|Shadows+Into+Light+Two|Open+Sans' rel='stylesheet' type='text/css'>
 		<link href='//fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
 
 		<style>

@@ -330,7 +330,7 @@ td, th {
   margin: 0; }
 
 * {
-  font-family: "Shadows Into Light Two"; }
+  font-family: "Open Sans"; }
 
 a {
   text-decoration: none; }
@@ -354,7 +354,7 @@ main {
 Layout -Anything related to layout
 **********/
 .welcome-hero {
-  background: url('/images/treebackground2.png') no-repeat;
+  background: url('/images/treebg.png') no-repeat;
   background-position: absolute;
   background-size: cover;
   margin: 0;
@@ -367,12 +367,12 @@ Layout -Anything related to layout
     text-shadow: 2px 2px 2px #014890;
     width: 80%; }
   .welcome-hero p, .welcome-hero h3 {
-    background-color: rgba(0, 0, 12, 0.4);
+    background-color: rgba(0, 0, 12, 0.5);
     border-radius: 25px;
-    color: #F4AD55;
+    color: rgba(255, 255, 255, 0.8);
     margin: 20px auto;
     padding: 10px;
-    text-shadow: 1px 1px #014890;
+    text-shadow: 1px 1px #69150D;
     width: 90%; }
 
 .choose-login, .choose-sign-up {
@@ -403,7 +403,7 @@ Layout -Anything related to layout
 
 @media screen and (min-width: 700px) {
   .welcome-hero {
-    background-image: url('/images/treebackground.png');
+    background-image: url('/images/treebg.png');
     background: cover;
     position: absolute; }
     .welcome-hero div {
@@ -467,9 +467,10 @@ header {
   header a {
     color: #F4AD55;
     display: block;
+    font-family: "Shadows Into Light Two", Helvetica, Sans-serif;
     padding: 6px; }
   header nav {
-    margin-left: 100px;
+    margin: 0 100px;
     text-align: left; }
     header nav > a {
       margin-left: 30px; }
@@ -487,6 +488,8 @@ header {
     float: right;
     text-align: right;
     padding: 3px; }
+    header div a {
+      padding: 5px; }
     header div button {
       border-radius: 30px;
       display: none; }
@@ -526,7 +529,8 @@ footer {
     footer div:nth-child(3) {
       display: none; }
   footer h2 {
-    color: #F4AD55; }
+    color: #F4AD55;
+    font-family: "Shadows Into Light Two", Helvetica, Sans-serif; }
   @media screen and (min-width: 750px) {
     footer div {
       display: inline-block;
@@ -545,11 +549,11 @@ footer {
     clear: both;
     content: "";
     display: block; }
-  .hero h1, .hero h4 {
-    margin-top: 0; }
+  .hero h1 {
+    font-family: "Shadows Into Light Two", Helvetica, Sans-serif; }
   @media screen and (min-width: 750px) {
     .hero {
-      background: -webkit-radial-gradient(rgba(181, 189, 200, 0.3) 0%, rgba(130, 140, 149, 0.5) 20%, rgba(130, 140, 149, 0.6) 40%, rgba(40, 52, 59, 0.8) 100%), url("/images/treebackground2.png") no-repeat 80% 10%;
+      background: -webkit-radial-gradient(rgba(181, 189, 200, 0.3) 0%, rgba(130, 140, 149, 0.5) 20%, rgba(130, 140, 149, 0.6) 40%, rgba(40, 52, 59, 0.8) 100%), url("/images/treebg.png") no-repeat 80% 10%;
       background-size: cover;
       min-height: 130px;
       position: relative; }
@@ -647,7 +651,7 @@ canvas {
   width: -webkit-calc(100% - 20px);
   width: calc(100% - 20px); }
   .snippet p {
-    padding: 3px; }
+    padding: 15px; }
   @media screen and (min-width: 650px) {
     .snippet {
       width: -webkit-calc(45% - 15px);
@@ -661,8 +665,8 @@ canvas {
   position: relative;
   padding: 15px;
   margin: 1em 0 2em;
-  border: 5px solid #69150D;
-  color: #00000C;
+  color: #fff;
+  background: -webkit-radial-gradient(rgba(105, 21, 13, 0.9) 0%, rgba(105, 21, 13, 0.9) 20%, #69150d 40%, rgba(105, 21, 13, 0.9) 100%), no-repeat 80% 10%;
   /* css3 */
   border-radius: 10px; }
   .story:before {
@@ -673,9 +677,6 @@ canvas {
     left: 40px;
     /* controls horizontal position */
     border-width: 20px 20px 0;
-    border-style: solid;
-    border-color: #69150D transparent;
-    /* reduce the damage in FF3.0 */
     display: block;
     width: 0; }
   .story:after {
@@ -687,7 +688,7 @@ canvas {
     /* value = (:before left) + (:before border-left) - (:after border-left) */
     border-width: 15px 14px 0;
     border-style: solid;
-    border-color: #fff transparent;
+    border-color: #69150D transparent;
     /* reduce the damage in FF3.0 */
     display: block;
     width: 0; }

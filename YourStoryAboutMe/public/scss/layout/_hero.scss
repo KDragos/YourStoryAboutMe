@@ -9,8 +9,8 @@
 		display:block;
 	}
 	
-	h1, h4 {
-		margin-top: 0;
+	h1 {
+		font-family: $third-font;
 	}
 
 	@media screen and (min-width: 750px) {
@@ -19,7 +19,7 @@
 								 rgba(130,140,149,0.50) 20%,
 								 rgba(130,140,149,0.60) 40%,
 								 rgba(40,52,59,0.8) 100%),
-		url("/images/treebackground2.png") no-repeat 80% 10%; 
+		url("/images/treebg.png") no-repeat 80% 10%; 
 	background-size: cover;
 	min-height: 130px;
 	position: relative;

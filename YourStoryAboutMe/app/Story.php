@@ -36,7 +36,7 @@ class Story extends Model {
 	 *
 	 * @var array
 	 */
-	protected $hidden = ['story_id', 'created_by'];
+	protected $guarded = ['story_id', 'created_by'];
 
 	/**
 	 * The relationships to other tables.

@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="<?php echo asset('css/app.css')?>">
 	<link rel="stylesheet" href="<?php echo asset('css/chosen.css')?>">
 	<link rel="stylesheet" href="<?php echo asset('css/styles.css')?>">
-	<link href='http://fonts.googleapis.com/css?family=Playball|Shadows+Into+Light+Two' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Playball|Shadows+Into+Light+Two|Open+Sans' rel='stylesheet' type='text/css'>
 	<link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/css/select2.css" rel="stylesheet" />
 	<script src="/bower_components/jquery/dist/jquery.js"> </script>
 	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'></script>

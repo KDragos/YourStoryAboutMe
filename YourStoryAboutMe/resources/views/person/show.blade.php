@@ -22,6 +22,24 @@
 		{{-- <div> Stories where this person is either a primary or secondary
 					 character will be put here. These will be displayed using
 					 masonry.  </div> --}}
-		<p> This is where stories about this person would go. This will allow users to read stories about other people they're connected with or searching for.</p>
+		<div class="story-container js-masonry">
+			@if( ! empty($stories) )
+				@foreach($stories as $story)
+					<div class="snippet">
+						<p class="story"> {{ $story->story_text }}</p>
+						<div class="author-details">
+							<img src="/images/logotree.png" alt="">
+							<a href="">More...</a>
+							<a href="">{{ $story->created_by }}</a>
+							<p>{{ $story->created_at}}</p>				
+						</div>
+					</div>
+				@endforeach
+			@else
+				<div>
+					No one is telling any stories about {{ $person->first_name }} yet. Check back soon!
+				</div>
+			@endif
+		</div>
 	</div>
 @stop

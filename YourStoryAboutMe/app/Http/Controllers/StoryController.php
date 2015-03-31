@@ -20,8 +20,8 @@ class StoryController extends Controller {
 	//			Or they are looking at the stories they have written.
 	public function index() {
 		$stories = DB::select(DB::raw("select story_id, story_text, published_at, created_by, 
-								concat_ws(\" \", first_name, middle_name, last_name) as author 
-								from story JOIN person ON person.person_id = story.created_by
+								concat_ws(\" \", first_name, middle_name, last_name) as author from story 
+								JOIN user ON user.user_id =	story.created_by
 								ORDER BY published_at DESC"));	
 
 		// \Auth::user()->name;  <- How to access the logged in user's name.

@@ -1,19 +1,33 @@
 @extends('layout')
 
+@section('section-nav')
+	<div class="story-nav">
+		<a href="/story">My Stories</a>
+		<a href="/story/create">Write a New Story</a>
+		<a href="">My Connections</a>
+	</div>	
+@endsection
+
 @section('main-content')
 
 	<div class="story-container js-masonry">
-		<div class="snippet">
-			<p class="story"> This paragraph should have a triangle comment around it as a border. consectetur adipisicing elit. Excepturi cum, illum maiores beatae praesentium fugiat, minus blanditiis sint tempore incidunt unde officiis esse, necessitatibus eos dignissimos saepe reprehenderit inventore est! dolor sit amet, consectetur adipisicing elit. Nisi, voluptatum.</p>
-			<div class="author-details">
-				<img src="images/logotree.png" alt="">
-				<a href="">More...</a>
-				<a href="">The Author</a>
-				<p>Date created</p>				
+		@if( ! empty($stories) )
+			@foreach($stories as $story)
+				<div class="snippet">
+					<p class="story"> {{ $story->story_text }}</p>
+					<div class="author-details">
+						<img src="images/logotree.png" alt="">
+						<a href="">More...</a>
+						<a href="">{{ $story->created_by }}</a>
+						<p>{{ $story->created_at}}</p>				
+					</div>
+				</div>
+			@endforeach
+		@else
+			<div>
+				No one is telling any stories about you yet. Check back soon!
 			</div>
-		</div>
-
-		<p>This page should show only the stories that the user is tagged in.</p>
+		@endif
 	</div>
 
 @endsection

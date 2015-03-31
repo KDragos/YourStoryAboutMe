@@ -24,13 +24,15 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-Route::get('profile', function (){
-	// This will eventually go to a user controller that will send them to a user profile
-	// 		where users can see the stories about them, click a link to see stories they've
-	//		written, connections, search for other people. 
-	return view('profile');
-});
+// Route::get('profile', function (){
+// 	// This will eventually go to a user controller that will send them to a user profile
+// 	// 		where users can see the stories about them, click a link to see stories they've
+// 	//		written, connections, search for other people. 
+// 	return view('profile');
+// });
 
+Route::get('profile', 'UserController@profile');
+Route::get('profile/{id}', 'UserController@personProfile');
 Route::get('layout', function(){
 	return view('layout');
 });
@@ -47,6 +49,8 @@ Route::resource('challenge', 'ChallengeController');
 // Routes to claim a person. 
 Route::get('person/{id}/claim', 'PersonController@claim');
 Route::post('person/{id}/claim', 'PersonController@processClaim');
+
+
 
 Route::get('family', function(){
 	return view('family');

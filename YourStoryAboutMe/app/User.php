@@ -27,20 +27,20 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	protected $fillable = ['first_name', 'middle_name', 
 						   'last_name', 'email', 'password'];
 
-
+	protected $guarded = ['user_id'];
 	/**
 	 * The attributes excluded from the model's JSON form.
 	 *
 	 * @var array
 	 */
-	protected $hidden = ['user_id', 'password', 'remember_token'];
+	protected $hidden = ['password', 'remember_token'];
 
 	// A user can have many stories.
 	// Can be accessed by $user->stories
-	public function stories() {
-		return $this->hasMany('App\Story');
-	}
-	public function person() {
-		return $this->belongsTo('App\Person');
-	}
+	// public function stories() {
+	// 	return $this->hasMany('App\Story');
+	// }
+	// public function person() {
+	// 	return $this->belongsTo('App\Person');
+	// }
 }

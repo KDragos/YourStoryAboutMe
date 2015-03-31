@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\AuthController;
 use App\Http\Requests\PersonRequest;
 use App\Person;
+use App\UserController;
 use Carbon\Carbon;
 use Request;
 use DB;
@@ -20,7 +21,17 @@ class PersonController extends Controller {
 
 	// Displays the details of a specific person.
 	public function show(Person $person) {
-		return view('person.show', compact('person'));
+		$id = $person->person_id;
+
+		// $person = Person::findOrFail($id);
+		// $person_id = $person->person_id;
+		$stories = DB::select(DB::raw("Select * from person 
+				JOIN story_person USING (person_id)
+				JOIN story USING (story_id)
+				WHERE person_id = \"$id\"
+				ORDER BY published_at DESC"));	
+
+		return view('person.show', compact('person', 'stories'));
 	}
 
 	// Sends users to a form to create a new person.
