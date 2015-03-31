@@ -13,23 +13,18 @@
 
 Route::get('/', function (){
 	// If not logged in.
-	return view('welcome');
+	return view('welcomeLayout');
 	// If users are logged in, go to the profile page.
 });
 
-Route::get('home', 'HomeController@index');
+// Route::get('home', 'HomeController@index');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
 
-// Route::get('profile', function (){
-// 	// This will eventually go to a user controller that will send them to a user profile
-// 	// 		where users can see the stories about them, click a link to see stories they've
-// 	//		written, connections, search for other people. 
-// 	return view('profile');
-// });
+
 
 Route::get('profile', 'UserController@profile');
 Route::get('profile/{id}', 'UserController@personProfile');
@@ -46,15 +41,12 @@ Route::resource('relationship', 'RelationshipController');
 Route::resource('person', 'PersonController');
 Route::resource('challenge', 'ChallengeController');
 
-// Routes to claim a person. 
-Route::get('person/{id}/claim', 'PersonController@claim');
-Route::post('person/{id}/claim', 'PersonController@processClaim');
-
-
 
 Route::get('family', function(){
 	return view('family');
 });
+
+Route::get('dashboard', 'UserController@dashboard');
 
 Route::get('api/relations/{id}', 'APIController@getAllRels');
 Route::get('api/chars/{id}', 'APIController@getCharacters');
