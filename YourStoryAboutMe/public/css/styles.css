@@ -327,7 +327,8 @@ td, th {
   box-sizing: inherit;
   color: inherit;
   font: inherit;
-  margin: 0; }
+  margin: 0;
+  font-size: 1em; }
 
 * {
   font-family: "Open Sans"; }
@@ -363,6 +364,7 @@ Layout -Anything related to layout
   .welcome-hero h1 {
     color: #fff;
     font-family: "Playball", cursive, cursive;
+    font-size: 2em;
     text-align: center;
     text-shadow: 2px 2px 2px #014890;
     width: 80%; }
@@ -370,6 +372,7 @@ Layout -Anything related to layout
     background-color: rgba(0, 0, 12, 0.5);
     border-radius: 25px;
     color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1em;
     margin: 20px auto;
     padding: 10px;
     text-shadow: 1px 1px #69150D;
@@ -391,7 +394,8 @@ Layout -Anything related to layout
   .login h1, .sign-up h1 {
     display: inline-block; }
   .login form, .sign-up form {
-    display: none; }
+    display: none;
+    font-size: 1.1em; }
     .login form label, .sign-up form label {
       float: left;
       text-align: left;
@@ -433,8 +437,8 @@ Layout -Anything related to layout
     border-radius: 10px;
     box-sizing: border-box;
     margin: 15px auto;
-    -webkit-transition: all 1.25s ease;
-    transition: all 1.25s ease;
+    -webkit-transition: all 1.2s ease;
+    transition: all 1.2s ease;
     width: -webkit-calc(50% - 10px);
     width: calc(50% - 10px); }
     .login h1, .sign-up h1 {
@@ -462,13 +466,18 @@ header {
   min-height: 75px;
   text-align: center; }
   header h1 {
+    color: #fff;
     font-family: "Playball", cursive;
-    color: #fff; }
+    font-size: 2.5em; }
   header a {
     color: #F4AD55;
     display: block;
     font-family: "Shadows Into Light Two", Helvetica, Sans-serif;
     padding: 6px; }
+    header a:hover {
+      text-decoration: none;
+      color: #014890;
+      text-shadow: 1px 1px 2px #F4AD55; }
   header nav {
     margin: 0 100px;
     text-align: left; }
@@ -500,7 +509,7 @@ header {
       header h1 {
         float: left; }
       header nav {
-        bottom: 25px;
+        bottom: 10px;
         left: 0;
         position: absolute;
         right: 0; }
@@ -541,8 +550,8 @@ footer {
         display: inline-block; } }
 
 .hero {
-  background-color: rgba(1, 72, 144, 0.3);
-  min-height: 75px;
+  background-color: rgba(244, 173, 85, 0.3);
+  min-height: 100px;
   padding: 10px;
   text-shadow: 1px 1px 2px #F4AD55; }
   .hero:after {
@@ -555,14 +564,14 @@ footer {
     .hero {
       background: -webkit-radial-gradient(rgba(181, 189, 200, 0.3) 0%, rgba(130, 140, 149, 0.5) 20%, rgba(130, 140, 149, 0.6) 40%, rgba(40, 52, 59, 0.8) 100%), url("/images/treebg.png") no-repeat 80% 10%;
       background-size: cover;
-      min-height: 130px;
+      min-height: 140px;
       position: relative; }
       .hero div {
         color: #fff;
         margin: 0 50px 10px;
         position: absolute;
         text-shadow: 3px 3px 1px #69150D;
-        width: 50%; }
+        width: 60%; }
         .hero div:after {
           content: "";
           clear: both;

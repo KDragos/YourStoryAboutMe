@@ -5,14 +5,20 @@ header {
 	min-height: 75px;
 	text-align: center;
 	h1 {
-		font-family: $secondary-font;
 		color: #fff;
+		font-family: $secondary-font;
+		font-size: 2.5em;
 	}
 	a {
 		color: $tan;
 		display:block;
 		font-family: $third-font;
 		padding: 6px;
+		&:hover {
+			text-decoration: none;
+			color: $blue;
+			text-shadow: 1px 1px 2px $tan;
+		}
 	}
 	nav {
 		margin: 0 100px;
@@ -56,7 +62,7 @@ header {
 			float:left;
 		}
 		nav {
-			bottom: 25px;
+			bottom: 10px;
 			left: 0;
 			position: absolute;
 			right: 0;
