@@ -32,7 +32,8 @@
 				<a href="/auth/logout">Logout</a>
 			</div>
 			<nav>
-				<a href="/story">Stories</a>
+				<a href="/dashboard">My Dashboard</a>
+				<a href="/story">Explore Stories</a>
 				<a href="/person">People</a>
 				<a href="/family">Your Family Tree</a>
 			</nav>	

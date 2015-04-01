@@ -23,6 +23,15 @@
 	@media screen and (min-width: 750px) {
 		margin: 10px auto; 
 		width: 90%;
+		ul {
+			column-count: 2;
+			column-gap: 10px;
+			column-rule: 1px solid $tan;
+			@media screen and (min-width: 900px) {
+				column-count: 3;
+
+			}
+		}
 	}
 }
 
