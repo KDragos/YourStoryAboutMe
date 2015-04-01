@@ -10,13 +10,11 @@
 	<link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/css/select2.css" rel="stylesheet" />
 	<link rel="stylesheet" href="/css/Select2Bootstrap3.css">
 	<script src="/bower_components/jquery/dist/jquery.js"> </script>
-	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'></script>
-	<script type="/select2dist/js/select2.full.js"></script>
+	<script src="/select2dist/js/select2.min.js"></script>
 	<script src="/js/arbor/lib/arbor.js"> </script>
 	<script src="/js/arbor/lib/arbor-tween.js"> </script>
 	<script src="/js/arbor/demos/halfviz/src/renderer.js"> </script>
 	<script src="/js/arbor/demos/_/graphics.js"> </script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.js"></script>
 
 
 </head>
@@ -83,9 +81,7 @@
 	@show
 
 
-	{{-- <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.min.js"></script> --}} 
 	<script src="<?php echo asset('/build.js') ?>"></script>
-	{{-- // <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script> --}}
 
 
 </script>

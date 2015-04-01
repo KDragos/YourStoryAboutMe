@@ -1,12 +1,12 @@
 {{-- Main form --}}
 <div class="form-group">
 	{!! Form::label('main_character', 'Main Character:') !!}
-	{!! Form::select('main_character', $person, null, ['class' => 'form-control']) !!}
+	{!! Form::select('main_character', $person, null, ['id' => 'main_character', 'class' => 'form-control']) !!}
 </div> 
 
 <div class="form-group">
 	{!! Form::label('secondary_characters', 'Secondary Characters:  (Use control or command to selet more than one)') !!}
-	{!! Form::select('secondary_characters[]', $person, null, ['id' => 'tags', 'class' => 'form-control', 'multiple']) !!}
+	{!! Form::select('secondary_characters[]', $person, null, ['id' => 'secondary_characters', 'class' => 'form-control', 'multiple']) !!}
 </div>
 
 <div class="form-group">
@@ -25,6 +25,7 @@
 
 @section('footer')
 <script>
-	$("#tags").select2();
+	$("#secondary_characters").select2();
+	$("#main_character").select2();
 </script>
 @endsection
