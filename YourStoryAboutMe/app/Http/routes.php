@@ -41,6 +41,7 @@ Route::resource('relationship', 'RelationshipController');
 Route::resource('person', 'PersonController');
 Route::resource('challenge', 'ChallengeController');
 
+Route::get('story/{id}/destroy', 'StoryController@destroy');
 
 Route::get('family', function(){
 	return view('family');

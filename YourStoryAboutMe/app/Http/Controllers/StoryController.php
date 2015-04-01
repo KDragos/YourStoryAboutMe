@@ -94,9 +94,10 @@ class StoryController extends Controller {
 	}
 
 	// Deletes the record from the database. 
-	public function destroy(Story $story) {
-		// We'd get here via a delete request. 
-		// $story->delete();
+	public function destroy($id) {
+		$story = Story::findOrFail($id)->delete();
+		$storyPerson = StoryPerson::where('story_id', '=', '$id')->delete();
+
 		return redirect('dashboard');
 
 	}
