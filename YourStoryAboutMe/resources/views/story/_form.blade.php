@@ -6,7 +6,7 @@
 
 <div class="form-group">
 	{!! Form::label('secondary_characters', 'Secondary Characters:  (Use control or command to selet more than one)') !!}
-	{!! Form::select('secondary_characters[]', $person, null, ['id' => 'tags', 'class' => 'form-control', 'multiple']) !!}
+	{!! Form::select('secondary_characters[]', $person, null, ['id' => 'characters', 'class' => 'form-control', 'multiple']) !!}
 </div>
 
 <div class="form-group">
@@ -25,6 +25,6 @@
 
 @section('footer')
 <script>
-	$("#tags").select2();
+	$("#characters").select2();
 </script>
 @endsection
