@@ -48,10 +48,14 @@ class StoryController extends Controller {
 		array_push($characters, Request::input('main_character'));
 
 		foreach($characters as $character) {
-			$secondInput = [];
-			$secondInput['story_id'] = $lastId;
-			$secondInput['person_id'] = $character;
-			StoryPerson::create($secondInput);
+			if ($character == null) {
+				continue;
+			} else {
+				$secondInput = [];
+				$secondInput['story_id'] = $lastId;
+				$secondInput['person_id'] = $character;
+				StoryPerson::create($secondInput);				
+			}
 		}
 		return redirect('story');
 	}
