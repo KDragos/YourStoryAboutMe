@@ -6,17 +6,8 @@
 
 <div class="form-group">
 	{!! Form::label('secondary_characters', 'Secondary Characters:  (Use control or command to selet more than one)') !!}
-	{!! Form::select('secondary_characters[]', $person, null, ['id' => 'secondary_characters', 'class' => 'form-control', 'multiple']) !!}
+	{!! Form::select('secondary_characters[]', $person, null, ['id' => 'tags', 'class' => 'form-control', 'multiple']) !!}
 </div>
-
-{{-- <div class='form-group'>
-	<select class="js-example-placeholder-single js-states form-control" tabindex="-1">
-		<option value="One">One</option>
-		<option value="Two">Two</option>
-		<option value="Three">Three</option>
-		<option value="Four">Four</option>
-	</select>
-</div> --}}
 
 <div class="form-group">
 	{!! Form::label('story_text', 'Story:') !!}
@@ -34,7 +25,6 @@
 
 @section('footer')
 <script>
-	// $("#secondary_characters").select2();
-	$("#secondary_characters").select2();
+	$("#tags").select2();
 </script>
 @endsection

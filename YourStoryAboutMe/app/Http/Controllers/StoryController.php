@@ -24,8 +24,6 @@ class StoryController extends Controller {
 								JOIN user ON user.user_id =	story.created_by
 								ORDER BY published_at DESC"));	
 
-		// \Auth::user()->name;  <- How to access the logged in user's name.
-		// $stories = Story::latest()->get();
 		return view('story.index')->with('stories', $stories);
 	}
 
@@ -48,7 +46,7 @@ class StoryController extends Controller {
 		$lastId = $story['story_id'];
 		$characters = Request::input('secondary_characters');
 		array_push($characters, Request::input('main_character'));
-		
+
 		foreach($characters as $character) {
 			$secondInput = [];
 			$secondInput['story_id'] = $lastId;
@@ -66,7 +64,11 @@ class StoryController extends Controller {
 	// Uses route model binding to retrieve a story from database.
 	// 	Then redirects users to a form for editing.
 	public function edit(Story $story) {
-		return view('story.edit')->with('story', $story);
+		$story = Story::findOrFail($story->story_id);
+		$something = new Person;
+		$person = $something->getPersonList();
+
+		return view('story.edit', compact('person', 'story'));
 	}
 	
 	
@@ -75,17 +77,27 @@ class StoryController extends Controller {
 	public function update(Story $story, StoryRequest $request) {
 		// This is accessed via a patch request.
 		$input = Request::Except('_method', '_token');
-		// $input['updated_at'] = Carbon::now();
+		$input['updated_at'] = Carbon::now();
 		
-		$story->update($input)->withTimestamps();
-		return redirect('story');
+		$story->update($input);
+		$characters = Request::input('secondary_characters');
+		array_push($characters, Request::input('main_character'));
+		$characterQuery = DB::table('story_person')->where('story_id', '=', $story->story_id)->delete();
+
+		foreach($characters as $character) {
+			$secondInput = [];
+			$secondInput['story_id'] = $story->story_id;
+			$secondInput['person_id'] = $character;
+			StoryPerson::create($secondInput);
+		}
+		return redirect('dashboard');
 	}
 
 	// Deletes the record from the database. 
 	public function destroy(Story $story) {
 		// We'd get here via a delete request. 
-		$story->delete();
-		return redirect('story');
+		// $story->delete();
+		return redirect('dashboard');
 
 	}
 

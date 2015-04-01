@@ -56,31 +56,8 @@ class UserController extends Controller {
 			JOIN story ON user.user_id = story.created_by
 			JOIN story_person USING (story_id)
 			JOIN person USING (person_id)
-			where user.user_id = \"$id\""));
-
-
-		// $currStory = " ";
-		// foreach($stories as $story) {
-		// 	if($story['story_id'] == $currStory) {
-
-		// 	} else {
-		// 		$currStory = $story['story_id'];
-		// 		$x = $story['story_id'];
-		// 		$x 
-		// 	}
-		// }
-		// dd($currStory);
-
-
-		// foreach($stories as $key => $story) {
-		// 	if ($story['story_id'] == $currStory) {
-		// 		dd($story['story_id']);
-		// 	} else {
-		// 		array_push($arrayOfCharacters, $currentArray); 
-		// 		$currStory = $story['story_id'];
-		// 		dd($currStory);
-		// 	}
-		// }
+			WHERE user.user_id = \"$id\"
+			ORDER BY published_at DESC"));
 
 		$allStories = [];
 		$currentStory = [];

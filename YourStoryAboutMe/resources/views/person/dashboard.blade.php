@@ -12,25 +12,27 @@
 @section('main-content')
 	<div class="dashboard">
 		<h2>Story Dashboard</h2>
-		
-		@foreach($allStories as $story)
-		<div class="dashboard-snippet">
-			<div class="controls">
-				<a href="story/{{$story['id']}}">View</a>
-				<a href="story/{{$story['id']}}/edit">Edit</a>
-				<a href="story/{{$story['id']}}/destroy">Delete</a>
+		@if (empty($allStories))
+			<div>You haven't written any stories yet.</div>
+		@else
+			@foreach($allStories as $story)
+			<div class="dashboard-snippet">
+				<div class="controls">
+					<a href="story/{{$story['id']}}">View</a>
+					<a href="story/{{$story['id']}}/edit">Edit</a>
+					<a href="story/{{$story['id']}}/destroy">Delete</a>
+				</div>
+				<h4>Created At: {{ $story['created_at'] }}</h4>
+				<p> {{ $story['text']}}</p>
+				<h4>People in this story:</h4>
+				<ul>
+					@foreach($story['characters'] as $character)
+					<li>{{ $character }}</li>
+					@endforeach
+				</ul>
 			</div>
-			<h4>Created At: {{ $story['created_at'] }}</h4>
-			<p> {{ $story['text']}}</p>
-			<h4>People in this story:</h4>
-			<ul>
-				@foreach($story['characters'] as $character)
-				<li>{{ $character }}</li>
-				@endforeach
-			</ul>
-		</div>
-		@endforeach
-		
+			@endforeach
+		@endif
 	</div>
 
 
