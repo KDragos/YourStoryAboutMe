@@ -3,8 +3,7 @@
 	<div class="story-nav">
 		<a href="/story">View Stories</a>
 		<a href="/story/create">New Story</a>
-		<a href="">Edit a Story</a>
-		<a href="">Delete a Story</a>			
+		<a href="/dashboard">Edit or Delete a Story</a>			
 	</div>	
 @endsection
 

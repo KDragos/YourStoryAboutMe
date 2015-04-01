@@ -4,8 +4,7 @@
 	<div class="story-nav">
 		<a href="/person">People</a>
 		<a href="/person/create">New Person</a>
-		<a href="">Edit a Person</a>  
-		<a href="">Delete a Person</a>			
+		<a href="">Edit a Connection</a>			
 	</div>	
 @endsection
 
