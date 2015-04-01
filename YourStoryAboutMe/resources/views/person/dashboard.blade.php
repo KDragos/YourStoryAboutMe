@@ -22,7 +22,7 @@
 			</div>
 			<h4>Created At: {{ $story['created_at'] }}</h4>
 			<p> {{ $story['text']}}</p>
-			<h4>Characters</h4>
+			<h4>People in this story:</h4>
 			<ul>
 				@foreach($story['characters'] as $character)
 				<li>{{ $character }}</li>
