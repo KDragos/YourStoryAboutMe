@@ -8,8 +8,10 @@
 	<link rel="stylesheet" href="<?php echo asset('css/styles.css')?>">
 	<link href='http://fonts.googleapis.com/css?family=Playball|Shadows+Into+Light+Two|Open+Sans' rel='stylesheet' type='text/css'>
 	<link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/css/select2.css" rel="stylesheet" />
+	<link rel="stylesheet" href="/css/Select2Bootstrap3.css">
 	<script src="/bower_components/jquery/dist/jquery.js"> </script>
 	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js'></script>
+	<script type="/select2dist/js/select2.full.js"></script>
 	<script src="/js/arbor/lib/arbor.js"> </script>
 	<script src="/js/arbor/lib/arbor-tween.js"> </script>
 	<script src="/js/arbor/demos/halfviz/src/renderer.js"> </script>

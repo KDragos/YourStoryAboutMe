@@ -50,21 +50,63 @@ class UserController extends Controller {
 		$id = \Auth::id();
 
 		$stories = DB::select(DB::raw( "Select story.created_at, 
-			story.story_text, person.first_name, 
+			story.story_text, story.story_id, person.first_name, 
 			person.middle_name, person.last_name
 			from user
 			JOIN story ON user.user_id = story.created_by
 			JOIN story_person USING (story_id)
 			JOIN person USING (person_id)
 			where user.user_id = \"$id\""));
-			// "Select * from person 
-			// 	JOIN story_person USING (person_id)
-			// 	JOIN story USING (story_id)
-			// 	WHERE person_id = \"$person_id\"
-			// 	ORDER BY published_at DESC"));	
 
 
-		return view('person.dashboard', compact('stories')); // return with the data needed. 
+		// $currStory = " ";
+		// foreach($stories as $story) {
+		// 	if($story['story_id'] == $currStory) {
+
+		// 	} else {
+		// 		$currStory = $story['story_id'];
+		// 		$x = $story['story_id'];
+		// 		$x 
+		// 	}
+		// }
+		// dd($currStory);
+
+
+		// foreach($stories as $key => $story) {
+		// 	if ($story['story_id'] == $currStory) {
+		// 		dd($story['story_id']);
+		// 	} else {
+		// 		array_push($arrayOfCharacters, $currentArray); 
+		// 		$currStory = $story['story_id'];
+		// 		dd($currStory);
+		// 	}
+		// }
+
+		$allStories = [];
+		$currentStory = [];
+		$currentStory['id'] = -1;
+		for($i = 0; $i < count($stories); $i++){
+			$story = $stories[$i];
+			if($currentStory['id'] != $story->story_id){
+				if($currentStory['id'] != -1){
+					$allStories[$currentStory['id']] = $currentStory;
+				}
+
+				$currentStory = [];
+				$currentStory['id'] = $story->story_id;
+				$currentStory['created_at'] = $story->created_at;
+				$currentStory['text'] = $story->story_text;
+				$currentStory['characters'] = [];
+			}
+
+			$character = $story->first_name . " " . $story->middle_name . " " . $story->last_name;
+			array_push($currentStory['characters'], $character);
+
+		}
+		$allStories[$currentStory['id']] = $currentStory;
+
+
+		return view('person.dashboard', compact('allStories')); // return with the data needed. 
 	}
 
 
