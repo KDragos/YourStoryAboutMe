@@ -11,18 +11,23 @@
 
 @section('main-content')
 	<div class="dashboard">
-		<h2>Your Dashboard</h2>
+		<h2>Story Dashboard</h2>
 		
-		@foreach($stories as $story)
+		@foreach($allStories as $story)
 		<div class="dashboard-snippet">
 			<div class="controls">
-				<a href="">View</a>
-				<a href="">Edit</a>
-				<a href="">Delete</a>
+				<a href="story/{{$story['id']}}">View</a>
+				<a href="story/{{$story['id']}}/edit">Edit</a>
+				<a href="story/{{$story['id']}}/destroy">Delete</a>
 			</div>
-			<h4>{{ $story->created_at }}</h4>
-			<p> {{ $story->story_text}}</p>
-			<h4>{{ $story->first_name }} {{$story->middle_name}} {{$story->last_name}}</h4>
+			<h4>Created At: {{ $story['created_at'] }}</h4>
+			<p> {{ $story['text']}}</p>
+			<h4>Characters</h4>
+			<ul>
+				@foreach($story['characters'] as $character)
+				<li>{{ $character }}</li>
+				@endforeach
+			</ul>
 		</div>
 		@endforeach
 		
