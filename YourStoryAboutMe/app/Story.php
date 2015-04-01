@@ -54,7 +54,7 @@ class Story extends Model {
     	return $this->belongsTo('App\User');
     }
 
-    public function getCharacters() {
+    public function characters() {
     	return $this->hasMany('App\StoryPerson');
     }
     /**
@@ -62,7 +62,7 @@ class Story extends Model {
 	 * 
 	 */
     // Can be accessed by $story->characters()
-    public function characters() {
+    public function people() {
     	return $this->hasMany('App\Person');
     }
    

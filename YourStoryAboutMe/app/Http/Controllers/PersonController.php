@@ -5,7 +5,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\AuthController;
 use App\Http\Requests\PersonRequest;
 use App\Person;
-use App\UserController;
 use Carbon\Carbon;
 use Request;
 use DB;
