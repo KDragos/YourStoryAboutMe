@@ -27,12 +27,20 @@ class Person extends Model {
 	public function getPersonList() {
 		$allPeople = $this->all();
 		$personList = [];
+		$userName = \Auth::user()->first_name . " "
+				 . \Auth::user()->middle_name . " "
+				 . \Auth::user()->last_name; 
+		
 		foreach($allPeople as $person) {
-			// echo $person->first_name . "something" ;
-
-			$wholeName = $person->first_name . " " . $person->middle_name . " " . $person->last_name;
-			// $person_id = $person['person_id'];
-			$personList[$person->person_id] = $wholeName;
+			$wholeName = $person->first_name . " "
+					  . $person->middle_name . " "
+					  . $person->last_name;
+			
+			if ($wholeName === $userName) {
+				continue;
+			} else {
+				$personList[$person->person_id] = $wholeName;
+			}
 		}
 		return $personList;
 	}
