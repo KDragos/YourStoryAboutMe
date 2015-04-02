@@ -1,12 +1,17 @@
 {{-- Main form --}}
 <div class="form-group">
 	{!! Form::label('main_character', 'Main Character:') !!}
-	{!! Form::select('main_character', $person, null, ['id' => 'main_character', 'class' => 'form-control']) !!}
+	{!! Form::select('main_character', $person, null, 
+					['id' => 'main_character', 
+					 'class' => 'form-control']) !!}
 </div> 
 
 <div class="form-group">
-	{!! Form::label('secondary_characters', 'Secondary Characters:  (Use control or command to selet more than one)') !!}
-	{!! Form::select('secondary_characters[]', $person, null, ['id' => 'secondary_characters', 'class' => 'form-control', 'multiple']) !!}
+	{!! Form::label('secondary_characters', 'Secondary Characters:') !!}
+	{!! Form::select('secondary_characters[]', $person, null, 
+					['id' => 'secondary_characters',
+					 'class' => 'form-control',
+					 'multiple']) !!}
 </div>
 
 <div class="form-group">
@@ -16,16 +21,10 @@
 
 <div class="form-group">
 	{!! Form::label('published_at', 'Publish On:') !!}
-	{!! Form::input('date', 'published_at', date('Y-m-d'), ['class' => 'form-control select2-selection select2-selection--single']) !!}	
+	{!! Form::input('date', 'published_at', date('Y-m-d'), ['class' => 'form-control']) !!}	
 </div>
 
 <div class="form-group">
 	{!! Form::submit($submitButtonText, ['class' => 'btn btn-primary form-control']) !!}
 </div>
 
-@section('footer')
-<script>
-	$("#secondary_characters").select2();
-	$("#main_character").select2();
-</script>
-@endsection

@@ -60,7 +60,7 @@ class StoryController extends Controller {
 				StoryPerson::create($secondInput);				
 			}
 		}
-		return redirect('story');
+		return redirect('dashboard');
 	}
 
 	// Uses route model binding to retrieve and display a single story.
@@ -95,12 +95,10 @@ class StoryController extends Controller {
 	// Uses route model binding to retrieve a story from the database.
 	// Collects and varifies information given, and updates the record in the database.
 	public function update(Story $story, StoryRequest $request) {
-		// This is accessed via a patch request.
 		$input = Request::Except('_method', '_token');
 		$input['updated_at'] = Carbon::now();
-		
 		$story->update($input);
-		$characters = Request::input('secondary_characters');
+				$characters = Request::input('secondary_characters');
 		array_push($characters, Request::input('main_character'));
 		$characterQuery = DB::table('story_person')->where('story_id', '=', $story->story_id)->delete();
 
@@ -117,9 +115,7 @@ class StoryController extends Controller {
 	public function destroy($id) {
 		$story = Story::findOrFail($id)->delete();
 		$storyPerson = StoryPerson::where('story_id', '=', '$id')->delete();
-
 		return redirect('dashboard');
-
 	}
 
 }

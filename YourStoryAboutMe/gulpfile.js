@@ -31,8 +31,8 @@ gulp.task('scripts', ['clean'], function() {
     './bower_components/handlebars/handlebars.min.js',
     './node_modules/masonry-layout/dist/masonry.pkgd.js',
     '//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js',
-     '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.js',
-     './public/js/scripts.js'
+    '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.js',
+    './public/js/scripts.js'
     ])  
     .pipe(concat('build.js'))
     .pipe(uglify())

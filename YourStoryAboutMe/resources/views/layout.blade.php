@@ -64,7 +64,6 @@
 				<p>This is where I'd put a blog about the site.</p>
 				<h2>Contact Us!</h2>
 				<a href="">KristinDragos@gmail.com</a>
-				{{-- <a>{{ HTML::mailto('KristinDragos@gmail.com', "Contact Us!") }}</a> --}}
 			</div>
 			<div>
 				<h2>Social Media</h2>
@@ -73,7 +72,7 @@
 		</footer>
 	@show
 
-	<script src="./bower_components/jquery/dist/jquery.js"></script>
+	<script src="/bower_components/jquery/dist/jquery.js"></script>
 	<script src="/js/arbor/lib/arbor.js"> </script>
 	<script src="/js/arbor/lib/arbor-tween.js"> </script>
 	<script src="/js/arbor/demos/_/graphics.js"></script>
