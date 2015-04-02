@@ -15,19 +15,20 @@ class UserController extends Controller {
 		$person = Person::find($id);
 		$auth_id = $person->person_id;
 
-		$stories = DB::select(DB::raw("Select 
+		$sqlStmt = "Select 
 				person.first_name, person.middle_name, person.last_name,
 				person.suffix, person.birth_date, person.death_date, 
-				story_text, story.created_at, 
+				story_text, story.created_at, story.updated_at,
 				concat_ws(\" \", user.first_name, user.middle_name,
 				user.last_name) as author 
 			from story_person 
 			JOIN person USING (person_id)
 			JOIN story USING (story_id)
 			JOIN user ON (story.created_by = user.user_id)
-			WHERE person_id = \"$id\" 
-			ORDER BY published_at DESC"
-		));
+			WHERE person_id = \"$id\"
+			ORDER BY story.updated_at DESC";
+
+		$stories = DB::select(DB::raw($sqlStmt));
 
 		return view('profile', compact('stories'));
 	}
@@ -39,7 +40,7 @@ class UserController extends Controller {
 				JOIN story_person USING (person_id)
 				JOIN story USING (story_id)
 				WHERE person_id = \"$person_id\"
-				ORDER BY published_at DESC"));	
+				ORDER BY story.updated_at DESC"));	
 
 		return view('profile', compact('stories'));
 	}
@@ -57,7 +58,7 @@ class UserController extends Controller {
 			JOIN story_person USING (story_id)
 			JOIN person USING (person_id)
 			WHERE user.user_id = \"$id\"
-			ORDER BY published_at DESC"));
+			ORDER BY story.updated_at DESC"));
 
 		$allStories = [];
 		$currentStory = [];

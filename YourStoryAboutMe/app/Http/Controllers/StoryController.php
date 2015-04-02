@@ -44,8 +44,10 @@ class StoryController extends Controller {
 		
 		// Stores any characters in the db. 
 		$lastId = $story['story_id'];
-		$characters = [];
-		array_push($characters, Request::input('secondary_characters'));
+		$characters =  Request::input('secondary_characters');
+		if($characters == null){
+			$characters = [];
+		}
 		array_push($characters, Request::input('main_character'));
 
 		foreach($characters as $character) {
@@ -68,13 +70,14 @@ class StoryController extends Controller {
 				 	concat_ws(\" \", user.first_name, user.middle_name, 
 				 	user.last_name) as author, published_at, 
 					concat_ws(\" \", person.first_name, person.middle_name,
-					person.last_name) as people 	
+					 person.last_name) as people 	
 					FROM story 
 					LEFT JOIN user ON user.user_id = story.created_by
 					LEFT JOIN story_person ON story_person.story_id = story.story_id
 					LEFT JOIN person ON person.person_id = story_person.person_id
 					WHERE story.story_id = $storyId";
 		$story = DB::select(DB::raw($sqlStmt));	
+
 		return view('story.show', compact('story'));
 	}
 

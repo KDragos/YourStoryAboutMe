@@ -15,15 +15,7 @@
 		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 		<div class="alert alert-success">{{ Session::get('flash_message') }}</div>
 	@endif
-{!! Form::open(['url' => 'person']) !!}
-	<input list="people" name="people">
-	<datalist id="people">
-		@foreach($person as $individual) 
-			<option value="{{$individual->person_id}}"> {{$individual->first_name}} {{$individual->middle_name}} {{$individual->last_name}} </option>	
-		@endforeach
-	</datalist>
-	<input type="submit">
-</form>
+
 </div>
 <div>
 	Can't find who you're looking for?

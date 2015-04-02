@@ -34,17 +34,17 @@ gulp.task('clean', function(){
 
 gulp.task('scripts', ['clean'], function() {
   return gulp.src([
-  // './bower_components/jquery/dist/jquery.js',
+  './bower_components/jquery/dist/jquery.js',
+  // './bower_components/chosen_v1.4.1/chosen.jquery.js',
   './public/select2dist/js/select2.full.js',
   './bower_components/handlebars/handlebars.min.js',
-  './bower_components/chosen_v1.4.1/chosen.jquery.js',
   './node_modules/masonry-layout/dist/masonry.pkgd.js',
   '//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js',
   '//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.js',
   './public/js/scripts.js'
-  ])  // Edit the place where we've put our js files. 
-    .pipe(concat('build.js')) // This is going to be the file name.
-    // .pipe(uglify())
+  ])  
+    .pipe(concat('build.js'))
+    .pipe(uglify())
     .pipe(gulp.dest('./public')); // Just a folder name. 
 });
 
