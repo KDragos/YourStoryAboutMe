@@ -16,13 +16,13 @@ use DB;
 class StoryController extends Controller {
 
 	// Displays all stories.
-	// ToDo: Ensure that the stories users see are related to the person's page they're on.
-	//			Or they are looking at the stories they have written.
 	public function index() {
-		$stories = DB::select(DB::raw("select story_id, story_text, published_at, created_by, 
-								concat_ws(\" \", first_name, middle_name, last_name) as author from story 
-								JOIN user ON user.user_id =	story.created_by
-								ORDER BY published_at DESC"));	
+		$sqlStmt = "select story_id, story_text, published_at, created_by, 
+					concat_ws(\" \", first_name, middle_name, last_name) as author 
+					FROM story 
+					JOIN user ON user.user_id =	story.created_by
+					ORDER BY published_at DESC";
+		$stories = DB::select(DB::raw($sqlStmt));	
 
 		return view('story.index')->with('stories', $stories);
 	}
