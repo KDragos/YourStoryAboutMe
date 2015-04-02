@@ -63,6 +63,18 @@ class StoryController extends Controller {
 
 	// Uses route model binding to retrieve and display a single story.
 	public function show(Story $story) {
+		$storyId = ($story->story_id);
+		$sqlStmt = "select story.story_id, story_text, story_person.person_id,
+				 	concat_ws(\" \", user.first_name, user.middle_name, 
+				 	user.last_name) as author, published_at, 
+					concat_ws(\" \", person.first_name, person.middle_name,
+					person.last_name) as people 	
+					FROM story 
+					LEFT JOIN user ON user.user_id = story.created_by
+					LEFT JOIN story_person ON story_person.story_id = story.story_id
+					LEFT JOIN person ON person.person_id = story_person.person_id
+					WHERE story.story_id = $storyId";
+		$story = DB::select(DB::raw($sqlStmt));	
 		return view('story.show', compact('story'));
 	}
 
@@ -70,8 +82,8 @@ class StoryController extends Controller {
 	// 	Then redirects users to a form for editing.
 	public function edit(Story $story) {
 		$story = Story::findOrFail($story->story_id);
-		$something = new Person;
-		$person = $something->getPersonList();
+		$personObject = new Person;
+		$person = $personObject->getPersonList();
 
 		return view('story.edit', compact('person', 'story'));
 	}
