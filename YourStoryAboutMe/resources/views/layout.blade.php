@@ -9,8 +9,6 @@
 	<link href='http://fonts.googleapis.com/css?family=Playball|Shadows+Into+Light+Two|Open+Sans' rel='stylesheet' type='text/css'>
 	<link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/css/select2.css" rel="stylesheet" />
 	<link rel="stylesheet" href="/css/Select2Bootstrap3.css">
-	<script src="/bower_components/jquery/dist/jquery.js"> </script>
-	<script src="/select2dist/js/select2.min.js"></script>
 
 </head>
 <body>
@@ -75,13 +73,13 @@
 		</footer>
 	@show
 
-	
-	<script src="<?php echo asset('/build.js') ?>"></script>
-	<script src="/js/arbor/lib/arbor-tween.js"> </script>
+	<script src="./bower_components/jquery/dist/jquery.js"></script>
 	<script src="/js/arbor/lib/arbor.js"> </script>
-	
-	<script src="/js/arbor/demos/halfviz/src/renderer.js"> </script>
-
+	<script src="/js/arbor/lib/arbor-tween.js"> </script>
+	<script src="/js/arbor/demos/_/graphics.js"></script>
+	<script src="/js/arbor/demos/halfviz/src/renderer.js"></script>
+	<script src="<?php echo asset('/build.js') ?>"></script>
+	<script src="/select2dist/js/select2.min.js"></script>
 </script>
 </body>
 </html>
