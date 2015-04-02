@@ -39,13 +39,13 @@ $(function() {
 	});
 
 
-
+   
 
 	// Family Tree
 	if(window.location.pathname == '/family') {
  		var sys = arbor.ParticleSystem(1000, 400, 1);
-        	sys.parameters({gravity:true, stiffness:900, repulsion:5000});
-          sys.renderer = Renderer("#viewport");
+        sys.parameters({gravity:true, stiffness:900, repulsion:5000});
+        sys.renderer = Renderer("#viewport");
     
         var relations;
        
@@ -55,7 +55,7 @@ $(function() {
                
             }
         }
-
+            
         var populateRelations = function(person, depth) {
             graphData.nodes[person.person_id] = {
             color: "#014890",

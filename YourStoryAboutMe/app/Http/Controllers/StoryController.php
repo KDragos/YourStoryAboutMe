@@ -44,7 +44,8 @@ class StoryController extends Controller {
 		
 		// Stores any characters in the db. 
 		$lastId = $story['story_id'];
-		$characters = Request::input('secondary_characters');
+		$characters = [];
+		array_push($characters, Request::input('secondary_characters'));
 		array_push($characters, Request::input('main_character'));
 
 		foreach($characters as $character) {

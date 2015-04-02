@@ -11,11 +11,6 @@
 	<link rel="stylesheet" href="/css/Select2Bootstrap3.css">
 	<script src="/bower_components/jquery/dist/jquery.js"> </script>
 	<script src="/select2dist/js/select2.min.js"></script>
-	<script src="/js/arbor/lib/arbor.js"> </script>
-	<script src="/js/arbor/lib/arbor-tween.js"> </script>
-	<script src="/js/arbor/demos/halfviz/src/renderer.js"> </script>
-	<script src="/js/arbor/demos/_/graphics.js"> </script>
-
 
 </head>
 <body>
@@ -80,9 +75,12 @@
 		</footer>
 	@show
 
-
+	
 	<script src="<?php echo asset('/build.js') ?>"></script>
-
+	<script src="/js/arbor/lib/arbor-tween.js"> </script>
+	<script src="/js/arbor/lib/arbor.js"> </script>
+	
+	<script src="/js/arbor/demos/halfviz/src/renderer.js"> </script>
 
 </script>
 </body>
